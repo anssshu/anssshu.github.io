@@ -1,0 +1,9 @@
+osm to geojson
+
+first install osmtogeojson
+
+$ sudo npm install -g osmtogeojson
+
+$ osmtogeojson map.osm>map.geojson
+
+next load the geojson file and complete the scripting with leaflet and javascript. 
