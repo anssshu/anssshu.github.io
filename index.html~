@@ -4,6 +4,7 @@
 <title>Hotel Somnath</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body id="body">
 <div id="container">
@@ -118,15 +119,18 @@
 	el.setAttribute("type",'image/x-icon');
 	el.setAttribute("href",'http://anssshu.github.io/images/favicon.ico');
 	el.setAttribute("rel","shortcut icon");
+	
+	var setIcon =function(){
+	
 	fr=document.querySelector("frameset");
 	
-	window.onload=function(){
-	
-	
 	document.head.appendChild(el);
+	
 	fr.parentNode.firstChild.appendChild(el);
 
 	};
+	
+	setTimeout(setIcon,1000);
    
     </script>
 </html>

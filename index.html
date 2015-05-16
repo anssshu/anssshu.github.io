@@ -119,16 +119,18 @@
 	el.setAttribute("type",'image/x-icon');
 	el.setAttribute("href",'http://anssshu.github.io/images/favicon.ico');
 	el.setAttribute("rel","shortcut icon");
-	fr=document.querySelector("frameset");
-	setTimeout(setIcon,1000);
 	
 	var setIcon =function(){
 	
+	fr=document.querySelector("frameset");
 	
 	document.head.appendChild(el);
+	
 	fr.parentNode.firstChild.appendChild(el);
 
 	};
+	
+	setTimeout(setIcon,1000);
    
     </script>
 </html>
