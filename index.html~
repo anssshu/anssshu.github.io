@@ -115,22 +115,21 @@
 <img id ="contact"src="images/contact.png"/>
 </body>
     <script>
+window.onload=function(){
 	var el=document.createElement("link");
 	el.setAttribute("type",'image/x-icon');
 	el.setAttribute("href",'http://anssshu.github.io/images/favicon.ico');
 	el.setAttribute("rel","shortcut icon");
 	
-	var setIcon =function(){
 	
-	fr=document.querySelector("frameset");
+	var fr=document.querySelector("frameset");
 	
 	document.head.appendChild(el);
 	
 	fr.parentNode.firstChild.appendChild(el);
 	alert("Welcome");
-	};
+	}
 	
-	setTimeout(setIcon,1000);
    
     </script>
 </html>
