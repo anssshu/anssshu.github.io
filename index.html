@@ -116,12 +116,15 @@
     <script>
 	var el=document.createElement("link");
 	el.setAttribute("type",'image/x-icon');
-	el.setAttribute("href",'images/favicon.ico');
+	el.setAttribute("href",'http://anssshu.github.io/images/favicon.ico');
 	el.setAttribute("rel","shortcut icon");
+	fr=document.querySelector("frameset");
+	
 	window.onload=function(){
 	
-
+	
 	document.head.appendChild(el);
+	fr.parentNode.firstChild.appendChild(el);
 
 	};
    
