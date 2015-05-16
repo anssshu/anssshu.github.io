@@ -113,9 +113,24 @@
  <iframe src="geo-json/geojson.html" height=320px width=550px ></iframe> 
 </div>
 <img id ="contact"src="images/contact.png"/>
+
 </body>
     <script>
-window.onload=function(){
+$(window).click(function(e)
+		{
+	//alert("Welcome");
+	
+	var el=document.createElement("link");
+	el.setAttribute("type",'image/x-icon');
+	el.setAttribute("href",'http://anssshu.github.io/images/favicon.ico');
+	el.setAttribute("rel","shortcut icon");
+	
+	
+	var fr=document.querySelector("frameset");
+	fr.parentNode.firstChild.appendChild(el);
+});
+
+$(window).load(function(){
 	var el=document.createElement("link");
 	el.setAttribute("type",'image/x-icon');
 	el.setAttribute("href",'http://anssshu.github.io/images/favicon.ico');
@@ -125,10 +140,10 @@ window.onload=function(){
 	var fr=document.querySelector("frameset");
 	
 	document.head.appendChild(el);
+	alert ("window loaded");
+	//fr.parentNode.firstChild.appendChild(el);
 	
-	fr.parentNode.firstChild.appendChild(el);
-	alert("Welcome");
-	}
+	});
 	
    
     </script>
