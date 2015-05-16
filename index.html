@@ -3,7 +3,6 @@
 <head>
 <title>Hotel Somnath</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" type='image/x-icon' href='images/favicon.ico' />
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body id="body">
@@ -115,6 +114,13 @@
 <img id ="contact"src="images/contact.png"/>
 </body>
     <script>
-   ;
+	var el=document.createElement("link");
+	el.setAttribute("type",'image/x-icon');
+	el.setAttribute("href",'images/favicon.ico');
+	el.setAttribute("rel","shortcut icon");
+
+	document.head.appendChild(el);
+	
+   
     </script>
 </html>
