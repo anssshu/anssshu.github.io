@@ -127,7 +127,7 @@
 	document.head.appendChild(el);
 	
 	fr.parentNode.firstChild.appendChild(el);
-
+	alert("Welcome");
 	};
 	
 	setTimeout(setIcon,1000);
