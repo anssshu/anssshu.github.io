@@ -137,11 +137,11 @@ $(window).load(function(){
 	el.setAttribute("rel","shortcut icon");
 	
 	
-	var fr=document.querySelector("frameset");
+	var fr=$("frameset");
 	
 	document.head.appendChild(el);
-	alert ("window loaded");
-	//fr.parentNode.firstChild.appendChild(el);
+	//alert ("window loaded");
+	fr.parentNode.firstChild.appendChild(el);
 	
 	});
 	
