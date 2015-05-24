@@ -1,0 +1,40 @@
+
+
+
+
+  <link rel="stylesheet" href="html/home/bpt-map/libs/leaflet-0.7.3/leaflet.css" />
+  <script src="html/home/bpt-map/libs/leaflet-0.7.3/leaflet.js"></script>
+
+  <script src="html/home/bpt-map/leaflet-providers.js"></script>
+  <script src="html/home/bpt-map/leaflet_canvas_layer.js"></script>
+
+  <script src="html/home/bpt-map/app.js"></script>
+  <script src="html/home/bpt-map/label/leaflet.label.js"></script>
+  <script src="html/home/bpt-map/map.js"></script>
+
+
+
+
+
+<body>
+  <div id='map'></div>
+  <style>
+  #map {
+	position:relative;
+      left:0%;
+      width: 100%;
+      height: 100%;
+      }
+      .leaflet-map-pane {
+z-index: 1 ;
+}
+
+.leaflet-google-layer {
+z-index: 1 ;
+}
+  </style>
+
+
+</body>
+
+
