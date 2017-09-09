@@ -1,0 +1,33 @@
+[
+
+{
+"id": "-2017-09-09-gmat",
+"title": "GMAT Sentence Correction",
+"author": "Anshuman",
+"tags": ["GMAT-V"],
+"url": "/2017/09/09/gmat/",
+"date": "2017-09-09",
+"content": "Sentence correctionimportant rules"
+}, 
+
+{
+"id": "-2017-09-06-javascript",
+"title": "Javascript Basics",
+"author": "Anshuman",
+"tags": ["JAVASCRIPT"],
+"url": "/2017/09/06/javascript/",
+"date": "2017-09-06",
+"content": "Javascript TutorialIntroductionJavascript is a small programming language which was initially designed for running on a web browser on the clientside but after the development of the node framework it can be used for serverside applcation developmentBasicsVariablesVaribles can be declared in the following wayvar my_string = \"foo\" //its a stringvar number = 5 // its a numbervar ok = false"
+}, 
+
+{
+"id": "-2017-09-01-blog",
+"title": "Demo Blog",
+"author": "Anshuman",
+"tags": ["DEMO"],
+"url": "/2017/09/01/blog/",
+"date": "2017-09-01",
+"content": "This is the default template blog"
+}
+
+]

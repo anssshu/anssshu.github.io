@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <atom:link href="http://localhost:4000/jekyll-ttskch-theme/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>http://localhost:4000/jekyll-ttskch-theme/</link>
+    <description></description>
+    <pubDate>Sat, 09 Sep 2017 14:43:00 +0530</pubDate>
+    
+    
+    
+      
+
+
+
+      <item>
+        <title>GMAT Sentence Correction | </title>
+        
+        <image>
+          <url>http://on2171g4d.bkt.clouddn.com/jekyll-banner.png</url>
+          <title>GMAT Sentence Correction</title>
+          <link>http://localhost:4000/jekyll-ttskch-theme/2017/09/09/gmat/</link>
+        </image>
+        
+        <link>http://localhost:4000/jekyll-ttskch-theme/2017/09/09/gmat/</link>
+        <guid isPermaLink="true">http://localhost:4000/jekyll-ttskch-theme/2017/09/09/gmat/</guid>
+        <description>&lt;script async=&quot;&quot; src=&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;
+
+&lt;!-- first ad --&gt;
+&lt;p&gt;&lt;ins class=&quot;adsbygoogle&quot; style=&quot;display:block&quot; data-ad-client=&quot;ca-pub-1169877436118955&quot; data-ad-slot=&quot;1756880282&quot; data-ad-format=&quot;auto&quot;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;&lt;/p&gt;
+&lt;h1 id=&quot;sentence-correction&quot;&gt;Sentence correction&lt;/h1&gt;
+
+&lt;p&gt;important rules&lt;/p&gt;
+</description>
+        <pubDate>Sat, 09 Sep 2017 12:01:10 +0530</pubDate>
+      </item>
+    
+      
+
+
+
+      <item>
+        <title>Javascript Basics | </title>
+        
+        <image>
+          <url></url>
+          <title>Javascript Basics</title>
+          <link>http://localhost:4000/jekyll-ttskch-theme/2017/09/06/javascript/</link>
+        </image>
+        
+        <link>http://localhost:4000/jekyll-ttskch-theme/2017/09/06/javascript/</link>
+        <guid isPermaLink="true">http://localhost:4000/jekyll-ttskch-theme/2017/09/06/javascript/</guid>
+        <description>&lt;h1 id=&quot;javascript-tutorial&quot;&gt;Javascript Tutorial&lt;/h1&gt;
+
+&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Javascript is a small programming language which was initially designed 
+for running on a web browser on the clientside but after the development 
+of the node framework it can be used for serverside applcation development&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;basics&quot;&gt;Basics&lt;/h2&gt;
+
+&lt;h3 id=&quot;variables&quot;&gt;Variables&lt;/h3&gt;
+
+&lt;p&gt;Varibles can be declared in the following way&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;my_string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;foo&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//its a string&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// its a number&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ok&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+</description>
+        <pubDate>Wed, 06 Sep 2017 15:40:10 +0530</pubDate>
+      </item>
+    
+      
+
+
+
+      <item>
+        <title>Demo Blog | </title>
+        
+        <image>
+          <url>http://on2171g4d.bkt.clouddn.com/jekyll-banner.png</url>
+          <title>Demo Blog</title>
+          <link>http://localhost:4000/jekyll-ttskch-theme/2017/09/01/blog/</link>
+        </image>
+        
+        <link>http://localhost:4000/jekyll-ttskch-theme/2017/09/01/blog/</link>
+        <guid isPermaLink="true">http://localhost:4000/jekyll-ttskch-theme/2017/09/01/blog/</guid>
+        <description>&lt;h1 id=&quot;this-is-the-default-template-blog&quot;&gt;This is the default template blog&lt;/h1&gt;
+</description>
+        <pubDate>Fri, 01 Sep 2017 15:40:10 +0530</pubDate>
+      </item>
+    
+  </channel>
+</rss>
