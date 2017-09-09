@@ -5,7 +5,7 @@
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
     <link>http://localhost:4000/</link>
     <description></description>
-    <pubDate>Sat, 09 Sep 2017 16:03:49 +0530</pubDate>
+    <pubDate>Sat, 09 Sep 2017 18:27:46 +0530</pubDate>
     
     
     
@@ -24,14 +24,7 @@
         
         <link>http://localhost:4000/2017/09/09/gmat/</link>
         <guid isPermaLink="true">http://localhost:4000/2017/09/09/gmat/</guid>
-        <description>&lt;script async=&quot;&quot; src=&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;
-
-&lt;!-- first ad --&gt;
-&lt;p&gt;&lt;ins class=&quot;adsbygoogle&quot; style=&quot;display:block&quot; data-ad-client=&quot;ca-pub-1169877436118955&quot; data-ad-slot=&quot;1756880282&quot; data-ad-format=&quot;auto&quot;&gt;&lt;/ins&gt;
-&lt;script&gt;
-(adsbygoogle = window.adsbygoogle || []).push({});
-&lt;/script&gt;&lt;/p&gt;
-&lt;h1 id=&quot;sentence-correction&quot;&gt;Sentence correction&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;sentence-correction&quot;&gt;Sentence correction&lt;/h1&gt;
 
 &lt;p&gt;important rules&lt;/p&gt;
 </description>
