@@ -5,7 +5,7 @@
 baseurl: ""
 url: http://anssshu.github.io
 #baseurl: /jekyll-ttskch-theme
-title: 
+title: ""
 description: 
 avatar: /assets/img/home.png
 # favicon: /favicon.ico
@@ -19,9 +19,9 @@ language: en
 icons:
   rss: true
   email:
-  github: ttskch
+  github: anssshu
   bitbucket:
-  twitter: ttskch
+  twitter: a9ssshu
   facebook:
   google_plus:
   tumblr:
