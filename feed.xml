@@ -1,91 +1,37 @@
+---
+layout: null
+---
+
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <link>http://localhost:4000/</link>
-    <description></description>
-    <pubDate>Sun, 10 Sep 2017 00:12:53 +0530</pubDate>
-    
-    
-    
-      
-
-
-
+    <title>{{ site.title | xml_escape }}</title>
+    <atom:link href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
+    <link>{{ site.baseurl | prepend: site.url }}/</link>
+    <description>{{ site.description | xml_escape }}</description>
+    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+    {% assign posts = '' | split: '' %}
+    {% for post in site.posts %}
+    {% if post.hide != true %}
+    {% assign posts = posts | push: post %}
+    {% endif %}
+    {% endfor %}
+    {% for post in posts limit:15 %}
+      {% include page-url-resolver.html page=post %}
       <item>
-        <title>GMAT Sentence Correction | </title>
-        
+        <title>{{ post.title | xml_escape }} | {{ site.title | xml_escape }}</title>
+        {% if post.eye_catch %}
         <image>
-          <url>http://on2171g4d.bkt.clouddn.com/jekyll-banner.png</url>
-          <title>GMAT Sentence Correction</title>
-          <link>http://localhost:4000/2017/09/09/gmat/</link>
+          <url>{{ post.eye_catch }}</url>
+          <title>{{ post.title }}</title>
+          <link>{{ url }}</link>
         </image>
-        
-        <link>http://localhost:4000/2017/09/09/gmat/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/09/09/gmat/</guid>
-        <description>&lt;h1 id=&quot;sentence-correction&quot;&gt;Sentence correction&lt;/h1&gt;
-
-&lt;p&gt;important rules&lt;/p&gt;
-</description>
-        <pubDate>Sat, 09 Sep 2017 12:01:10 +0530</pubDate>
+        {% endif %}
+        <link>{{ url }}</link>
+        <guid isPermaLink="true">{{ url }}</guid>
+        <description>{{ post.content | xml_escape }}</description>
+        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
       </item>
-    
-      
-
-
-
-      <item>
-        <title>Javascript Basics | </title>
-        
-        <image>
-          <url></url>
-          <title>Javascript Basics</title>
-          <link>http://localhost:4000/2017/09/06/javascript/</link>
-        </image>
-        
-        <link>http://localhost:4000/2017/09/06/javascript/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/09/06/javascript/</guid>
-        <description>&lt;h1 id=&quot;javascript-tutorial&quot;&gt;Javascript Tutorial&lt;/h1&gt;
-
-&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;Javascript is a small programming language which was initially designed 
-for running on a web browser on the clientside but after the development 
-of the node framework it can be used for serverside applcation development&lt;/p&gt;
-
-&lt;h2 id=&quot;basics&quot;&gt;Basics&lt;/h2&gt;
-
-&lt;h3 id=&quot;variables&quot;&gt;Variables&lt;/h3&gt;
-
-&lt;p&gt;Varibles can be declared in the following way&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;my_string&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;foo&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//its a string&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// its a number&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ok&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-</description>
-        <pubDate>Wed, 06 Sep 2017 15:40:10 +0530</pubDate>
-      </item>
-    
-      
-
-
-
-      <item>
-        <title>Demo Blog | </title>
-        
-        <image>
-          <url>http://on2171g4d.bkt.clouddn.com/jekyll-banner.png</url>
-          <title>Demo Blog</title>
-          <link>http://localhost:4000/2017/09/01/blog/</link>
-        </image>
-        
-        <link>http://localhost:4000/2017/09/01/blog/</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/09/01/blog/</guid>
-        <description>&lt;h1 id=&quot;this-is-the-default-template-blog&quot;&gt;This is the default template blog&lt;/h1&gt;
-</description>
-        <pubDate>Fri, 01 Sep 2017 15:40:10 +0530</pubDate>
-      </item>
-    
+    {% endfor %}
   </channel>
 </rss>

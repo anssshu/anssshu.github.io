@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<div class="article-wrapper">
+    <article>
+        {% include article-header.html page=page link=false share=page.share %}
+        <section class="post-content well" >
+        	
+            {{ content }}
+          
+        </section>
+        {% include article-footer.html page=page share=page.share %}
+    </article>
+</div>
+
+{% if site.disqus %}
+<section class="comments">
+    {% include disqus.html %}
+</section>
+{% endif %}
