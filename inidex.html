@@ -1,18 +1,18 @@
 ---
 layout: default
 ---
-
+<div class="panel post-link"><h1><center>Blogs</center></h1></div>
 {% for post in paginator.posts %}
-<div class="article-wrapper">
+<div class="article-wrapper ">
     <article>
     {% include article-header.html page=post link=true %}
-        <section class="post-content">
+        <section class="post-content ">
             {% assign size = post.content | split: site.excerpt_separator | size %}
             {% if size > 1 %}
             {{ post.excerpt }}
             <a class="btn" href="{{ post.url | prepend: site.baseurl }}">{{ site.str_read_more }}</a>
             {% else %}
-            {{ post.content }}
+            <!--{{ post.content | slice: 0,200 }} -->
             {% endif %}
         </section>
     </article>
