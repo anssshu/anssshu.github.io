@@ -1,12 +1,18 @@
-- title: Getting Started
+- title: Notes
   docs:
   - home
-  - themes
-  - themes2
-  - customization
-
-- title: Examples
-  docs:
   - cheatsheet
-  - font-awesome
-  - bootstrap
+
+- title: Jekyll
+  docs:
+  - intro
+  - installation
+
+
+- title: Github
+  docs:
+  - github_intro
+
+- title: Sketching
+  docs:
+  - sketch
