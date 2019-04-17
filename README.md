@@ -1,40 +1,9 @@
-# Jekyll Doc Theme
+## anssshu.github.io
+This project is created for documenting notes and articles as blog
 
-Go to [the website](https://aksakalli.github.io/jekyll-doc-theme/) for detailed information and demo.
+For maintaining documentation  all contents should go inside the _docs folder.All files should be connected via the _data/docs.yml file .
 
-## Running locally
+Blogs should go inside the _posts directory.
+All blogs should be written in as markdown text.
 
-You need Ruby and gem before starting, then:
-
-```bash
-# install bundler
-gem install bundler
-
-# clone the project
-git clone https://github.com/aksakalli/jekyll-doc-theme.git
-cd jekyll-doc-theme
-
-# run jekyll with dependencies
-bundle exec jekyll serve
-```
-
-## Docker
-
-Alternatively, you can deploy it using the multi-stage [Dockerfile](Dockerfile)
-that serves files from Nginx for better performance in production.
-
-Build the image for your site's `JEKYLL_BASEURL`:
-
-```
-docker build --build-arg JEKYLL_BASEURL="/your-base/url" -t jekyll-doc-theme .
-```
-
-(or leave it empty for root: `JEKYLL_BASEURL=""`) and serve it:
-
-```
-docker run -p 8080:80 jekyll-doc-theme
-```
-
-## License
-
-Released under [the MIT license](LICENSE).
+the exact preocedure is inside the Welcome to Notes article 
