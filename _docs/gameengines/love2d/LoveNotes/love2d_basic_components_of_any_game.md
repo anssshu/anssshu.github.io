@@ -1,5 +1,8 @@
+---
+title: Basic Components of any game
+permalink: /docs/love2d_game_components/
+---
 SEE EXAMPLES ON THE FOLLOWING CONCEPTS
---------------------------------------
 
 ---Fonts and text on screen---------font.lua
 

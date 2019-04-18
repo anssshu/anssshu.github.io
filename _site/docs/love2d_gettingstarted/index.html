@@ -11,23 +11,23 @@
 
     <link rel="shortcut icon" href="/favicon.ico?1">
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Sketching Youtube tutorial collections | Notes</title>
+<title>Getting Started with Love 2d | Notes</title>
 <meta name="generator" content="Jekyll v3.8.4" />
-<meta property="og:title" content="Sketching Youtube tutorial collections" />
+<meta property="og:title" content="Getting Started with Love 2d" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="How to sketch a face" />
-<meta property="og:description" content="How to sketch a face" />
-<link rel="canonical" href="http://localhost:4000/docs/sketch/" />
-<meta property="og:url" content="http://localhost:4000/docs/sketch/" />
+<meta name="description" content="Getting Started Get LÖVE" />
+<meta property="og:description" content="Getting Started Get LÖVE" />
+<link rel="canonical" href="http://localhost:4000/docs/love2d_gettingstarted/" />
+<meta property="og:url" content="http://localhost:4000/docs/love2d_gettingstarted/" />
 <meta property="og:site_name" content="Notes" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-04-18T12:23:24+02:00" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://localhost:4000/docs/sketch/","headline":"Sketching Youtube tutorial collections","dateModified":"2019-04-18T12:23:24+02:00","datePublished":"2019-04-18T12:23:24+02:00","description":"How to sketch a face","@context":"http://schema.org"}</script>
+{"@type":"WebPage","url":"http://localhost:4000/docs/love2d_gettingstarted/","headline":"Getting Started with Love 2d","dateModified":"2019-04-18T12:23:24+02:00","datePublished":"2019-04-18T12:23:24+02:00","description":"Getting Started Get LÖVE","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-    <link rel="canonical" href="http://localhost:4000/docs/sketch/">
+    <link rel="canonical" href="http://localhost:4000/docs/love2d_gettingstarted/">
     <link rel="alternate" type="application/rss+xml" title="Notes" href="http://localhost:4000/feed.xml" />
 </head>
 
@@ -156,12 +156,12 @@
       </div>
       
       
-      <div class="panel-collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
         <div class="list-group">
           
             
             
-            <a class="list-group-item active" href="/docs/sketch/">Sketching Youtube tutorial collections</a>
+            <a class="list-group-item " href="/docs/sketch/">Sketching Youtube tutorial collections</a>
           
         </div>
       </div>
@@ -274,12 +274,12 @@
       </div>
       
       
-      <div class="panel-collapse collapse" id="collapse-6" role="tabpanel" aria-label="Side Navigation">
+      <div class="panel-collapse" id="collapse-6" role="tabpanel" aria-label="Side Navigation">
         <div class="list-group">
           
             
             
-            <a class="list-group-item " href="/docs/love2d_gettingstarted/">Getting Started with Love 2d</a>
+            <a class="list-group-item active" href="/docs/love2d_gettingstarted/">Getting Started with Love 2d</a>
           
             
             
@@ -314,9 +314,74 @@
         </div>
 
         <div class="col-md-8">
-            <h1>Sketching Youtube tutorial collections</h1>
-            <div id="markdown-content-container"><h3 id="how-to-sketch-a-face">How to sketch a face</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iMEBSQJYaAY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            <h1>Getting Started with Love 2d</h1>
+            <div id="markdown-content-container"><p>Getting Started
+Get LÖVE</p>
+
+<p>Download the latest version of LÖVE from the website, and install it. If you’re on Windows and don’t want to install LÖVE, you can also just download the zipped executables and extract them anywhere.</p>
+
+<p>To find out which version of LÖVE is installed, run the following command:
+love –version
+Making a Game</p>
+
+<p>To make a minimal game, create a folder anywhere, and open up your favorite text editor. Sublime Text is a pretty good one for all operating systems, and it has Lua support built in. Create a new file in the folder you just created, and name it main.lua. Put the following code in the file, and save it.
+function love.draw()
+    love.graphics.print(“Hello World”, 400, 300)
+end
+Running Games</p>
+
+<p>LÖVE can load a game in two ways:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>From a folder that contains a main.lua file.
+From a .love file that has a main.lua file in the top-most directory level (aka root) 
+</code></pre></div></div>
+
+<p>For creating .love files see Game Distribution.
+Windows</p>
+
+<p>ZeroBrane Studio, Sublime Text 2, Notepad++, and SciTE allow you to launch the game from within their code editors.</p>
+
+<p>Otherwise, the easiest way to run the game is to drag the folder onto either love.exe or a shortcut to love.exe. Remember to drag the folder containing main.lua, and not main.lua itself.</p>
+
+<p>You can also launch the game from the command line:
+“C:\Program Files\LOVE\love.exe” “C:\games\mygame”
+“C:\Program Files\LOVE\love.exe” “C:\games\packagedgame.love”</p>
+
+<p>You can create a shortcut to do this; simply make a shortcut to love.exe, right-click on it and select “Properties”, and then put the command line you want in the “Target” box for the shortcut.</p>
+
+<p>On Windows, there is a special command-line option which will attach a console to the window, allowing you to see the result of print calls (equivalent to setting t.console=true in conf.lua):
+“C:\Program Files\LOVE\love.exe” –console
+Linux</p>
+
+<p>On Linux, you can use one of these command lines:
+love /home/path/to/gamedir/
+love /home/path/to/packagedgame.love</p>
+
+<p>If you installed LÖVE system-wide, you can double click on .love files in your file manager as well.
+Mac OS X</p>
+
+<p>On Mac OS X, a folder or .love file can be dropped onto the love application bundle. On the Mac Terminal (command line), you can use love like this (assuming it’s installed to the Applications directory):
+open -n -a love “~/path/to/mygame”</p>
+
+<p>However, the above method will not output printed text to the terminal window. To do that, you will need to execute the love binary inside the application bundle directly:
+/Applications/love.app/Contents/MacOS/love ~/path/to/mygame</p>
+
+<p>You can set up an alias in your Terminal session to call the binary when you use love by adding an alias to your ~/.bash_profile.</p>
+
+<p>Open the file with
+open -a TextEdit ~/.bash_profile</p>
+
+<p>You may have to run
+touch ~/.bash_profile</p>
+
+<p>first if the file does not yet exist.</p>
+
+<p>Then paste in the following code and save the file:</p>
+<h1 id="alias-to-love">alias to love</h1>
+<p>alias love=”/Applications/love.app/Contents/MacOS/love”</p>
+
+<p>Now you can call love from the command line like Linux and Windows:
+love “~/path/to/mygame”</p>
 
 </div>
             <div style="clear:both;">
@@ -349,12 +414,75 @@
 
   
   
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
     <ul class="pager">
       
         
         
         <li class="previous">
-          <a href="/docs/github_intro/">
+          <a href="/docs/lua_inheritance/">
             <span aria-hidden="true">&larr;</span> Previous
           </a>
         </li>
@@ -364,7 +492,7 @@
         
         
         <li class="next">
-          <a href="/docs/lua_dataTypes/">
+          <a href="/docs/love2d_modules/">
             Next <span aria-hidden="true">&rarr;</span>
           </a>
         </li>

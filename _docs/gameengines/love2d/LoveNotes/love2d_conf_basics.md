@@ -1,4 +1,7 @@
-
+---
+title: Love2d Conf Basics
+permalink: /docs/love2d_conf_basics/
+---
 --conf.lua file for the game configuration
 function love.conf(t)
     t.identity = nil                   -- The name of the save directory (string)

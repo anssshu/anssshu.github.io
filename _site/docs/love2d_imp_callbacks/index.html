@@ -11,23 +11,23 @@
 
     <link rel="shortcut icon" href="/favicon.ico?1">
     <!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Sketching Youtube tutorial collections | Notes</title>
+<title>Love2d Important callbacks | Notes</title>
 <meta name="generator" content="Jekyll v3.8.4" />
-<meta property="og:title" content="Sketching Youtube tutorial collections" />
+<meta property="og:title" content="Love2d Important callbacks" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="How to sketch a face" />
-<meta property="og:description" content="How to sketch a face" />
-<link rel="canonical" href="http://localhost:4000/docs/sketch/" />
-<meta property="og:url" content="http://localhost:4000/docs/sketch/" />
+<meta name="description" content="DRAW" />
+<meta property="og:description" content="DRAW" />
+<link rel="canonical" href="http://localhost:4000/docs/love2d_imp_callbacks/" />
+<meta property="og:url" content="http://localhost:4000/docs/love2d_imp_callbacks/" />
 <meta property="og:site_name" content="Notes" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-04-18T12:23:24+02:00" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://localhost:4000/docs/sketch/","headline":"Sketching Youtube tutorial collections","dateModified":"2019-04-18T12:23:24+02:00","datePublished":"2019-04-18T12:23:24+02:00","description":"How to sketch a face","@context":"http://schema.org"}</script>
+{"@type":"WebPage","url":"http://localhost:4000/docs/love2d_imp_callbacks/","headline":"Love2d Important callbacks","dateModified":"2019-04-18T12:23:24+02:00","datePublished":"2019-04-18T12:23:24+02:00","description":"DRAW","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-    <link rel="canonical" href="http://localhost:4000/docs/sketch/">
+    <link rel="canonical" href="http://localhost:4000/docs/love2d_imp_callbacks/">
     <link rel="alternate" type="application/rss+xml" title="Notes" href="http://localhost:4000/feed.xml" />
 </head>
 
@@ -156,12 +156,12 @@
       </div>
       
       
-      <div class="panel-collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
         <div class="list-group">
           
             
             
-            <a class="list-group-item active" href="/docs/sketch/">Sketching Youtube tutorial collections</a>
+            <a class="list-group-item " href="/docs/sketch/">Sketching Youtube tutorial collections</a>
           
         </div>
       </div>
@@ -274,7 +274,7 @@
       </div>
       
       
-      <div class="panel-collapse collapse" id="collapse-6" role="tabpanel" aria-label="Side Navigation">
+      <div class="panel-collapse" id="collapse-6" role="tabpanel" aria-label="Side Navigation">
         <div class="list-group">
           
             
@@ -295,7 +295,7 @@
           
             
             
-            <a class="list-group-item " href="/docs/love2d_imp_callbacks/">Love2d Important callbacks</a>
+            <a class="list-group-item active" href="/docs/love2d_imp_callbacks/">Love2d Important callbacks</a>
           
             
             
@@ -314,9 +314,239 @@
         </div>
 
         <div class="col-md-8">
-            <h1>Sketching Youtube tutorial collections</h1>
-            <div id="markdown-content-container"><h3 id="how-to-sketch-a-face">How to sketch a face</h3>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iMEBSQJYaAY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            <h1>Love2d Important callbacks</h1>
+            <div id="markdown-content-container"><h3 id="draw">DRAW</h3>
+
+<p>function love.load()
+   hamster = love.graphics.newImage(“hamster.png”)
+   x = 50
+   y = 50
+end
+function love.draw()
+   love.graphics.draw(hamster, x, y)
+end</p>
+
+<h3 id="focus">FOCUS</h3>
+
+<p>function love.load()
+  text = “FOCUSED”
+end</p>
+
+<p>function love.draw()
+  love.graphics.print(text,0,0)
+end</p>
+
+<p>function love.focus(f)
+  if not f then
+    text = “UNFOCUSED!!”
+    print(“LOST FOCUS”)
+  else
+    text = “FOCUSED!”
+    print(“GAINED FOCUS”)
+  end
+end</p>
+
+<h3 id="keypressed">KEYPRESSED</h3>
+
+<p>function love.keypressed(key)
+   if key == “escape” then
+      love.event.quit()
+   end</p>
+
+<p>end</p>
+<h3 id="keyreleased">KEYRELEASED</h3>
+
+<p>function love.keyreleased(key)
+   if key == “escape” then
+      love.event.quit()
+   end
+end</p>
+<h3 id="-load">-LOAD</h3>
+<p>function love.load()
+   hamster = love.graphics.newImage(“hamster.png”)
+   x = 50
+   y = 50
+end</p>
+
+<p>function love.draw()
+   love.graphics.draw(hamster, x, y)
+end</p>
+
+<h3 id="mousefocus">MOUSEFOCUS</h3>
+<p>function love.load()
+  text = “Mouse is in the window!”
+end</p>
+
+<p>function love.draw()
+  love.graphics.print(text,0,0)
+end</p>
+
+<p>function love.mousefocus(f)
+  if not f then
+    text = “Mouse is not in the window!”
+    print(“LOST MOUSE FOCUS”)
+  else
+    text = “Mouse is in the window!”
+    print(“GAINED MOUSE FOCUS”)
+  end
+end</p>
+
+<h3 id="mousemoved">MOUSEMOVED</h3>
+<p>love.mousemoved( x, y, dx, dy )
+Arguments</p>
+
+<p>number x
+    The mouse position on the x-axis. 
+number y
+    The mouse position on the y-axis. 
+number dx
+    The amount moved along the x-axis since the last time love.mousemoved was called. 
+number dy
+    The amount moved along the y-axis since the last time love.mousemoved was called.</p>
+
+<p>Returns</p>
+
+<p>Nothing.</p>
+
+<h3 id="mousepressed">MOUSEPRESSED</h3>
+<p>function love.load()
+   printx = 0
+   printy = 0
+end
+function love.draw()
+   love.graphics.print(“Text”, printx, printy)
+end
+function love.mousepressed(x, y, button)
+   if button == “l” then
+      printx = x
+      printy = y
+   end
+end</p>
+
+<h3 id="mousereleased">MOUSERELEASED</h3>
+<p>function love.load()
+   printx = 0
+   printy = 0
+end
+function love.draw()
+   love.graphics.print(“Text”, printx, printy)
+end
+function love.mousereleased(x, y, button)
+   if button == “l” then
+      printx = x
+      printy = y
+   end
+end</p>
+
+<h3 id="quit">QUIT</h3>
+<p>local quit = true;
+function love.quit()
+    if quit then
+        print(‘We are not ready to quit yet!’);
+        quit = not quit;
+    else
+        print(‘Thanks for playing. Please play again soon!’);
+        return quit;
+    end
+    return true;
+end</p>
+
+<h3 id="resize">RESIZE</h3>
+<p>function love.resize(w, h)
+  print((“Window resized to width: %d and height: %d.”):format(w, h))
+end</p>
+<h3 id="run">RUN</h3>
+<p>The default function for 0.9.0, 0.9.1, and 0.9.2, used if you don’t supply your own.
+function love.run()</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if love.math then
+    love.math.setRandomSeed(os.time())
+    for i=1,3 do love.math.random() end
+end
+
+if love.event then
+    love.event.pump()
+end
+
+if love.load then love.load(arg) end
+
+-- We don't want the first frame's dt to include time taken by love.load.
+if love.timer then love.timer.step() end
+
+local dt = 0
+
+-- Main loop time.
+while true do
+    -- Process events.
+    if love.event then
+        love.event.pump()
+        for e,a,b,c,d in love.event.poll() do
+            if e == "quit" then
+                if not love.quit or not love.quit() then
+                    if love.audio then
+                        love.audio.stop()
+                    end
+                    return
+                end
+            end
+            love.handlers[e](a,b,c,d)
+        end
+    end
+
+    -- Update dt, as we'll be passing it to update
+    if love.timer then
+        love.timer.step()
+        dt = love.timer.getDelta()
+    end
+
+    -- Call update and draw
+    if love.update then love.update(dt) end -- will pass 0 if love.timer is disabled
+
+    if love.window and love.graphics and love.window.isCreated() then
+        love.graphics.clear()
+        love.graphics.origin()
+        if love.draw then love.draw() end
+        love.graphics.present()
+    end
+
+    if love.timer then love.timer.sleep(0.001) end
+end
+</code></pre></div></div>
+
+<p>end</p>
+
+<h3 id="textinput">TEXTINPUT</h3>
+<p>Record and print text the user writes.
+function love.load()
+    text = “Type away! – “
+end</p>
+
+<p>function love.textinput(t)
+    text = text .. t
+end</p>
+
+<p>function love.draw()
+    love.graphics.printf(text, 0, 0, love.graphics.getWidth())
+end</p>
+
+<p>Print text the user writes, and erase text when backspace is pressed.</p>
+
+<h3 id="update">UPDATE</h3>
+<p>Run a function called think inside a table called npc once per second.
+dtotal = 0   – this keeps track of how much time has passed
+function love.update(dt)
+   dtotal = dtotal + dt   – we add the time passed since the last update, probably a very small number like 0.01
+   if dtotal &gt;= 1 then
+      dtotal = dtotal - 1   – reduce our timer by a second, but don’t discard the change… what if our framerate is 2/3 of a second?
+      npc.think()
+   end
+end</p>
+
+<h3 id="visible">VISIBLE</h3>
+<p>function love.visible(v)
+    print(v and “Window is visible!” or “Window is not visible!”);</p>
+
+<p>end</p>
 
 </div>
             <div style="clear:both;">
@@ -349,12 +579,87 @@
 
   
   
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
     <ul class="pager">
       
         
         
         <li class="previous">
-          <a href="/docs/github_intro/">
+          <a href="/docs/love2d_basic_utilities/">
             <span aria-hidden="true">&larr;</span> Previous
           </a>
         </li>
@@ -364,7 +669,7 @@
         
         
         <li class="next">
-          <a href="/docs/lua_dataTypes/">
+          <a href="/docs/love2d_joysticks/">
             Next <span aria-hidden="true">&rarr;</span>
           </a>
         </li>

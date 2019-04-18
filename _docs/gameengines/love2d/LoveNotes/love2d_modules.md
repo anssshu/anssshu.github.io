@@ -1,3 +1,7 @@
+---
+title: Love2d Modules
+permalink: /docs/love2d_modules/
+---
 love
 
 When beginning to write games using LÖVE, the most important parts of the API are the callbacks: love.load to do one-time setup of your game, love.update which is used to manage your game's state frame-to-frame, and love.draw which is used to render the game state onto the screen.

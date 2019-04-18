@@ -1,4 +1,8 @@
----GAMEPADAXIS
+---
+title: Love2d Joysticks
+permalink: /docs/love2d_joysticks/
+---
+### GAMEPADAXIS
 Called when a Joystick's virtual gamepad axis is moved.
 Function
 Synopsis
@@ -15,8 +19,7 @@ number value
 Returns
 
 Nothing. 
--------------------------------------------------------------
----GAMEPADPRESSED
+### GAMEPADPRESSED
 Called when a Joystick's virtual gamepad button is pressed.
 Function
 Synopsis
@@ -31,8 +34,7 @@ GamepadButton button
 Returns
 
 Nothing. 
-------------------------------------------------------------
----GAMEPADRELEASED
+### GAMEPADRELEASED
 Called when a Joystick's virtual gamepad button is released.
 Function
 Synopsis
@@ -47,8 +49,7 @@ GamepadButton button
 Returns
 
 Nothing. 
-------------------------------------------------------------
----JOYSTICKADDED
+### JOYSTICKADDED
 Called when a Joystick is connected.
 Function
 Synopsis
@@ -61,8 +62,7 @@ Joystick joystick
 Returns
 
 Nothing. 
-----------------------------------------------------------
----love.joystickaxis
+love.joystickaxis
 
 Available since LÖVE 0.9.0
 This callback is not supported in earlier versions.
@@ -83,8 +83,7 @@ number value
 Returns
 
 Nothing. 
---------------------------------------------------------------
----love.joystickhat
+love.joystickhat
 Available since LÖVE 0.9.0
 This callback is not supported in earlier versions.
 
@@ -104,13 +103,12 @@ JoystickHat direction
 Returns
 
 Nothing. 
-----------------------------------------------------
----joystickpressed
+joystickpressed
 function love.joystickpressed(joystick,button)
    player:jumping()
 end
 
---inside playerClass
+inside playerClass
 function player:jumping()
    if joyStick:isGamepadDown('a') then
         if self.jump then
@@ -119,8 +117,7 @@ function player:jumping()
         end
     end
 end
-------------------------------------------------------------
----joystickreleased
+joystickreleased
     	
 
 love.joystickreleased
@@ -156,8 +153,7 @@ number button
 Returns
 
 Nothing. 
----------------------------------------------------------------------
----love.joystickremoved
+love.joystickremoved
 Available since LÖVE 0.9.0
 This function is not supported in earlier versions.
 
@@ -173,4 +169,3 @@ Joystick joystick
 Returns
 
 Nothing. 
---------------------------------------------------------------------------

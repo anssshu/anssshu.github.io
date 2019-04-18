@@ -218,6 +218,64 @@
     },
   
 
+  
+    
+    
+    {
+      "title": "Getting Started with Love 2d",
+      "url": "/docs/love2d_gettingstarted/"
+
+    },
+  
+    
+    
+    {
+      "title": "Love2d Modules",
+      "url": "/docs/love2d_modules/"
+
+    },
+  
+    
+    
+    {
+      "title": "Love2d Conf Basics",
+      "url": "/docs/love2d_conf_basics/"
+
+    },
+  
+    
+    
+    {
+      "title": "Love2d Program Architecture",
+      "url": "/docs/love2d_basic_utilities/"
+
+    },
+  
+    
+    
+    {
+      "title": "Love2d Important callbacks",
+      "url": "/docs/love2d_imp_callbacks/"
+
+    },
+  
+    
+    
+    {
+      "title": "Love2d Joysticks",
+      "url": "/docs/love2d_joysticks/"
+
+    },
+  
+    
+    
+    {
+      "title": "Basic Components of any game",
+      "url": "/docs/love2d_game_components/"
+
+    },
+  
+
 
   
   {

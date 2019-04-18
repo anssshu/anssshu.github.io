@@ -1,4 +1,8 @@
----DRAW
+---
+title: Love2d Important callbacks
+permalink: /docs/love2d_imp_callbacks/
+---
+### DRAW
 
 function love.load()
    hamster = love.graphics.newImage("hamster.png")
@@ -8,8 +12,9 @@ end
 function love.draw()
    love.graphics.draw(hamster, x, y)
 end
---------------------------------------------------
----FOCUS
+
+
+### FOCUS
 
 function love.load()
   text = "FOCUSED"
@@ -28,32 +33,34 @@ function love.focus(f)
     print("GAINED FOCUS")
   end
 end
----------------------------------
----KEYPRESSED
+
+### KEYPRESSED
+
 function love.keypressed(key)
    if key == "escape" then
       love.event.quit()
    end
+
 end
-------------------------------
----KEYRELEASED
+### KEYRELEASED
+
 function love.keyreleased(key)
    if key == "escape" then
       love.event.quit()
    end
 end
-----------------------------------------
----LOAD
+### -LOAD
 function love.load()
    hamster = love.graphics.newImage("hamster.png")
    x = 50
    y = 50
 end
+
 function love.draw()
    love.graphics.draw(hamster, x, y)
 end
-----------------------------------------------
----MOUSEFOCUS
+
+### MOUSEFOCUS
 function love.load()
   text = "Mouse is in the window!"
 end
@@ -71,8 +78,8 @@ function love.mousefocus(f)
     print("GAINED MOUSE FOCUS")
   end
 end
-----------------------------------------------------------
----MOUSEMOVED
+
+### MOUSEMOVED
 love.mousemoved( x, y, dx, dy )
 Arguments
 
@@ -88,8 +95,8 @@ number dy
 Returns
 
 Nothing.
--------------------------------------------------------------------------
----MOUSEPRESSED
+
+### MOUSEPRESSED
 function love.load()
    printx = 0
    printy = 0
@@ -103,8 +110,8 @@ function love.mousepressed(x, y, button)
       printy = y
    end
 end
-----------------------------------------------------------------------
----MOUSERELEASED
+
+### MOUSERELEASED
 function love.load()
    printx = 0
    printy = 0
@@ -118,8 +125,8 @@ function love.mousereleased(x, y, button)
       printy = y
    end
 end
-----------------------------------------------------------------------------
----QUIT
+
+### QUIT
 local quit = true;
 function love.quit()
     if quit then
@@ -131,13 +138,12 @@ function love.quit()
     end
     return true;
 end
--------------------------------------------------------------------------
----RESIZE
+
+### RESIZE
 function love.resize(w, h)
   print(("Window resized to width: %d and height: %d."):format(w, h))
 end
---------------------------------------------------------------------------
----RUN
+### RUN
  The default function for 0.9.0, 0.9.1, and 0.9.2, used if you don't supply your own.
 function love.run()
 
@@ -195,8 +201,8 @@ function love.run()
     end
 
 end
------------------------------------------------------------------
----TEXTINPUT
+
+### TEXTINPUT
 Record and print text the user writes.
 function love.load()
     text = "Type away! -- "
@@ -211,8 +217,8 @@ function love.draw()
 end
 
 Print text the user writes, and erase text when backspace is pressed. 
---------------------------------------------------------------------------
----UPDATE
+
+### UPDATE
 Run a function called think inside a table called npc once per second.
 dtotal = 0   -- this keeps track of how much time has passed
 function love.update(dt)
@@ -223,12 +229,12 @@ function love.update(dt)
    end
 end
 
--------------------------------------------------------------------
----VISIBLE
+### VISIBLE
 function love.visible(v)
     print(v and "Window is visible!" or "Window is not visible!");
+
 end
------------------------------------------------------------------------
+
 
 
 

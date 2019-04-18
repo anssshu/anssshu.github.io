@@ -38,4 +38,14 @@
   - lua_garbage_collection
   - lua_weekTables
   - lua_for_loop
-  - lua_inheritance  
+  - lua_inheritance 
+
+- title: Love2d
+  docs:
+  - love2d_gettingstarted
+  - love2d_modules
+  - love2d_conf_basics
+  - love2d_basic_utilities
+  - love2d_imp_callbacks 
+  - love2d_joysticks 
+  - love2d_game_components  

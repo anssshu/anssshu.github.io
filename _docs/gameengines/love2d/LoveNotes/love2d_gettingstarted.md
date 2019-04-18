@@ -1,3 +1,7 @@
+---
+title: Getting Started with Love 2d
+permalink: /docs/love2d_gettingstarted/
+---
 Getting Started
 Get LÖVE
 

@@ -1,3 +1,7 @@
+---
+title: Love2d Program Architecture
+permalink: /docs/love2d_basic_utilities/
+---
 A basic program architecture
 
 --create a folder 
