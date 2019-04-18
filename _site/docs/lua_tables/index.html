@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/favicon.ico?1">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Lua Tables | Notes</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="Lua Tables" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Tables Tutorial lua-users home wiki" />
+<meta property="og:description" content="Tables Tutorial lua-users home wiki" />
+<link rel="canonical" href="http://localhost:4000/docs/lua_tables/" />
+<meta property="og:url" content="http://localhost:4000/docs/lua_tables/" />
+<meta property="og:site_name" content="Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-18T11:43:34+02:00" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/lua_tables/","headline":"Lua Tables","dateModified":"2019-04-18T11:43:34+02:00","datePublished":"2019-04-18T11:43:34+02:00","description":"Tables Tutorial lua-users home wiki","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="canonical" href="http://localhost:4000/docs/lua_tables/">
+    <link rel="alternate" type="application/rss+xml" title="Notes" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="/">
+                <span><img src="/img/logonav.png" alt="Logo"></span> Notes
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ><a href="/blog/2017/02/01/welcome-to-jekyll/">Blog</a></li>
+                
+            </ul>
+            <div class="navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <input id="search-box" type="search" class="form-control" placeholder="Search...">
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href=""><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+            Notes
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-1" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/home/">Welcome to Notes</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/cheatsheet/">Markdown Cheatsheet</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+            Jekyll
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-2" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/intro/">Intro to Jekyll</a>
+          
+            
+            
+            <a class="list-group-item " href=""></a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+            Github
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-3" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/github_intro/">Github Notes</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+            Sketching
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/sketch/">Sketching Youtube tutorial collections</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+            Lua
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse" id="collapse-5" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_dataTypes/">Lua Data Types</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_assignment/">Lua Assignment</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_numbers/">Lua Numbers</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_strings/">Lua Strings</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_operators/">Lua Operators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_controlstructure/">Lua Control Structures</a>
+          
+            
+            
+            <a class="list-group-item active" href="/docs/lua_tables/">Lua Tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_function/">Lua Functions</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_scope/">Lua Scope</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_metamethods/">Lua Metamethods</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_environments/">Lua Environments</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_modules/">Lua Modules</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_objects/">Lua Objects</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_patterns/">Lua Patterns</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_coroutines/">Lua Coroutines</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_iterators/">lua iterators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_garbage_collection/">Lua Garbage Collection</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_weekTables/">Lua Weak tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_for_loop/">Lua For Loop</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_inheritance/">Lua inheritance</a>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+        </div>
+
+        <div class="col-md-8">
+            <h1>Lua Tables</h1>
+            <div id="markdown-content-container"><p>Tables Tutorial</p>
+
+<p>lua-users home
+	wiki</p>
+
+<p>Tables are the only “container” type in Lua. They are associative arrays ([1]), which means they store a set of key/value pairs. In a Key/Value pair you can store a value under a key and then later retrieve the value using that key.</p>
+
+<p>Creating tables</p>
+
+<p>Tables are created using table constructors, which are defined using curly brackets, e.g. { } . To define an empty table we can do the following.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {}    -- construct an empty table and assign it to variable "t"
+&gt; print(t)
+table: 0035AE18
+</code></pre></div></div>
+
+<p>Notice when the value of a table is displayed only the type and unique id of the object are displayed. To print out the contents of a table we must do so explicitly. We’ll learn how to do this later.</p>
+
+<p>Using tables</p>
+
+<p>To access the value associated with the key in a table you can use the table[key] syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {}
+&gt; t["foo"] = 123 -- assign the value 123 to the key "foo" in the table
+&gt; t[3] = "bar" -- assign the value "bar" to the key 3 in the table
+&gt; = t["foo"]
+123
+&gt; = t[3]
+bar
+</code></pre></div></div>
+
+<p>If there’s no value associated with the key, it’s not an error, instead the result will be nil:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {}
+&gt; = t["foo"]
+nil
+</code></pre></div></div>
+
+<p>You can erase a key/value pair from a table by assigning nil to the key.</p>
+
+<p>Any value can be used as a key (not just numbers and strings) just make sure it’s not nil or NaN (Not a Number):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {}
+&gt; k = {}
+&gt; f = function () end
+&gt; t[k] = 123
+&gt; t[f] = 456
+&gt; = t[k]
+123
+&gt; = t[f]
+456
+&gt; t[nil] = 123
+stdin:1: table index is nil
+stack traceback:
+        stdin:1: in main chunk
+        [C]: in ?
+&gt; t[0/0] = 123
+stdin:1: table index is NaN
+stack traceback:
+        stdin:1: in main chunk
+        [C]: in ?
+</code></pre></div></div>
+
+<p>But it’s so common to use string constants as keys there’s a special shortcut syntax for it:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {}
+&gt; t.foo = 123 -- same as t["foo"] (but not t[foo], which would use the variable foo as the key)
+&gt; = t.foo
+123
+&gt; = t["foo"]
+123
+</code></pre></div></div>
+
+<p>The shortcut syntax is only valid if the string consists of underscores, letters, and numbers, but shouldn’t start with a number.</p>
+
+<p>You can also add key/value associations right inside the {} syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {["foo"] = "bar", [123] = 456}
+&gt; = t.foo
+bar
+&gt; = t[123]
+456
+</code></pre></div></div>
+
+<p>There is also a syntax shortcut for string keys in {}, as long as the string conforms to the same rules as the . syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {foo = "bar"} -- same as ["foo"]="bar" (but not [foo]="bar" , that would use the variable foo)
+&gt; = t["foo"]
+bar
+</code></pre></div></div>
+
+<p>To loop over all the key/value pairs in a table, use the pairs iterator:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {foo = "bar", [123] = 456}
+&gt; for key,value in pairs(t) do print(key,value) end
+foo bar
+123 456
+</code></pre></div></div>
+
+<p>The order when looping with pairs is undefined. Just because you added one item after adding another doesn’t mean that’s the order they’ll be in with pairs.</p>
+
+<p>Inside a pairs loop, it’s safe to reassign existing keys or remove them (by assigning nil to them), but not to add new keys (that had a nil value previously).</p>
+
+<p>Tables as arrays</p>
+
+<p>Firstly remember tables are still just key/value containers because Lua doesn’t actually have an array type. But tables can be treated like arrays which is explained here:</p>
+
+<p>Table constructors can contain a comma separated list of objects to create an “array”:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {"a", "b", "c"}
+&gt; = t[1]
+a
+&gt; = t[3]
+c
+</code></pre></div></div>
+
+<p>This is a syntax shortcut for:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {[1]="a", [2]="b", [3]="c"}
+&gt; = t[1]
+a
+&gt; = t[3]
+c
+</code></pre></div></div>
+
+<p>So it’s still just a key/value association.</p>
+
+<p>You can also mix the array syntax with the usual key=value syntax:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {"a", "b", [123]="foo", "c", name="bar", "d", "e"}
+&gt; for k,v in pairs(t) do print(k,v) end
+1       a
+2       b
+3       c
+4       d
+5       e
+123     foo
+name    bar
+</code></pre></div></div>
+
+<p>The first index is the number one, unlike most other languages that start with the number zero. The reason this was chosen is because it’s often more intuitive. It was also chosen because it’s just a key and not an offset from the beginning. Most languages implement actual array types.</p>
+
+<p>You can get the “length” of an array using the # operator:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {"a", "b", "c"}
+&gt; = #t
+3
+</code></pre></div></div>
+
+<p>The # operator doesn’t count all the items in the table (!). Instead it finds the last integer (non-fractional number) key. Because of how it’s implemented its results are undefined if all the integer keys in the table aren’t consecutive. Which is why it shouldn’t be used for tables used as sparse arrays[2]).</p>
+
+<p>There are two ways to add an item to the end of an array:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {}
+&gt; table.insert(t, 123)
+&gt; t[#t+1] = 456
+&gt; = t[1]
+123
+&gt; = t[2]
+456
+</code></pre></div></div>
+
+<p>table.insert takes an optional index parameter to insert into the middle of an array. It shifts up any other integer keys above the index:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {"a", "c"}
+&gt; table.insert(t, 2, "b")
+&gt; = t[1], t[2], t[3]
+a b c
+</code></pre></div></div>
+
+<p>table.remove removes an item from an array, shifting down any remaining integer keys:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {"a", "b", "c"}
+&gt; table.remove(t, 2)
+&gt; = t[1], t[2]
+a c
+</code></pre></div></div>
+
+<p>To loop over an array use ipairs. Unlike pairs it only gives you the consecutive integer keys from 1. It guarantees their order sequence. With pairs the number keys will not necessarily be given in the correct order!</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {"a", "b", "c"}
+&gt; for i, v in ipairs(t) do print(i, v) end
+1       a
+2       b
+3       c
+</code></pre></div></div>
+
+<p>To join together an array of strings there’s table.concat. It takes optional separator, start, and end parameters. Here we only use the separator:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {"a", "b", "c"}
+&gt; = table.concat(t, ";")
+a;b;c
+</code></pre></div></div>
+
+<p>For a list of all the table.* functions and their complete documentation, see [[3]].</p>
+
+<p>Table values are references</p>
+
+<p>When you pass a table to a function or store it in a new variable, etc. a new copy of that table is not created. Tables do not act like numbers in these cases. Instead the variable or function becomes a reference to the original table. This is much like a pointer in the C Language. For example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; t = {}
+&gt; u = t
+&gt; u.foo = "bar"
+&gt; = t.foo
+bar
+&gt; function f(x) x[1] = 2 end
+&gt; f(t)
+&gt; = u[1]
+2
+</code></pre></div></div>
+
+<p>Tables are freed from memory by the garbage collector after the last reference to them is gone. This does not always happen immediately however. The garbage collector is designed to work correctly even if a table (directly or indirectly) contains a reference to itself.</p>
+
+<p>A related thing to remember is that table comparison works by reference. Comparing tables using == will return false even if the two tables have the same contents. They must actually be references to the same table.</p>
+
+<p>Finally; if you want to copy a table you’ll have to do it manually. Lua offers no standard function for it mainly due to all the different ways you can copy a table.</p>
+
+<p>Tables as unordered sets</p>
+
+<p>Often people new to Lua will create an array to store a group of objects even if the order isn’t necessary. The problem with this is that removal is slow because the computer needs to shift down other items. Checking if an item is in the array is slow; again because the computer must loop over all the items.</p>
+
+<p>This can be solved by storing items in the keys and setting values to a dummy value (like true). Doing that will help you use a table like an unordered set with fast insertion, removal, and lookup.</p>
+
+<p>The main differences are that there’s no easy way to get the count (you have to use a loop), and you can’t store the same item twice in the set.</p>
+
+<p>So if you need to store a group of items it’s best to consider both sets and arrays to see what fits your situation best.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local items = {}
+
+-- add some items to the set
+items["foo"] = true
+items[123] = true
+
+-- is "foo" in the set?
+if items["foo"] then
+  -- do stuff
+end
+
+-- remove item from the set
+items[123] = nil
+</code></pre></div></div>
+
+<p>RecentChanges · preferences
+edit · history
+Last edited September 7, 2014 5:47 am GMT (diff)</p>
+</div>
+            <div style="clear:both;">
+              <p class="text-center">
+                <br />
+                
+              </p>
+            </div>
+            <hr>
+            
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/lua_controlstructure/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/docs/lua_function/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+      </ul>
+    <div class="clear"></div>
+    
+
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            Notes 2019 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/js/bootstrap.min.js "></script>
+<script src="/js/typeahead.bundle.min.js "></script>
+
+<script src="/js/main.js "></script>
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+My Current Focus
+
+
+
+i will be documenting my notes with my current jekyll app
+
+at present i will prepare a note for the lua programming language and love2d game framework
+
+and design a game engine on top the love 2d frame work and name it loveengine 
+
+and create 2d games with the love engine
+
+
+
+
+
+
+
+

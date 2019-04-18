@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/favicon.ico?1">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Lua Weak tables | Notes</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="Lua Weak tables" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Weak Tables Tutorial lua-users home wiki" />
+<meta property="og:description" content="Weak Tables Tutorial lua-users home wiki" />
+<link rel="canonical" href="http://localhost:4000/docs/lua_weekTables/" />
+<meta property="og:url" content="http://localhost:4000/docs/lua_weekTables/" />
+<meta property="og:site_name" content="Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-18T11:43:34+02:00" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/lua_weekTables/","headline":"Lua Weak tables","dateModified":"2019-04-18T11:43:34+02:00","datePublished":"2019-04-18T11:43:34+02:00","description":"Weak Tables Tutorial lua-users home wiki","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="canonical" href="http://localhost:4000/docs/lua_weekTables/">
+    <link rel="alternate" type="application/rss+xml" title="Notes" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="/">
+                <span><img src="/img/logonav.png" alt="Logo"></span> Notes
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ><a href="/blog/2017/02/01/welcome-to-jekyll/">Blog</a></li>
+                
+            </ul>
+            <div class="navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <input id="search-box" type="search" class="form-control" placeholder="Search...">
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href=""><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+            Notes
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-1" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/home/">Welcome to Notes</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/cheatsheet/">Markdown Cheatsheet</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+            Jekyll
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-2" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/intro/">Intro to Jekyll</a>
+          
+            
+            
+            <a class="list-group-item " href=""></a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+            Github
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-3" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/github_intro/">Github Notes</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+            Sketching
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/sketch/">Sketching Youtube tutorial collections</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+            Lua
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse" id="collapse-5" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_dataTypes/">Lua Data Types</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_assignment/">Lua Assignment</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_numbers/">Lua Numbers</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_strings/">Lua Strings</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_operators/">Lua Operators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_controlstructure/">Lua Control Structures</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_tables/">Lua Tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_function/">Lua Functions</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_scope/">Lua Scope</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_metamethods/">Lua Metamethods</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_environments/">Lua Environments</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_modules/">Lua Modules</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_objects/">Lua Objects</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_patterns/">Lua Patterns</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_coroutines/">Lua Coroutines</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_iterators/">lua iterators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_garbage_collection/">Lua Garbage Collection</a>
+          
+            
+            
+            <a class="list-group-item active" href="/docs/lua_weekTables/">Lua Weak tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_for_loop/">Lua For Loop</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_inheritance/">Lua inheritance</a>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+        </div>
+
+        <div class="col-md-8">
+            <h1>Lua Weak tables</h1>
+            <div id="markdown-content-container"><p>Weak Tables Tutorial</p>
+
+<p>lua-users home
+	wiki</p>
+
+<p>It is helpful to understand garbage collection before reading this tutorial. The GarbageCollectionTutorial provides an introduction.</p>
+
+<p>The weak link</p>
+
+<p>In computer languages such as Lua that employ garbage collection, a reference to an object is said to be weak if it does not prevent collection of the object. Weak references are useful for determining when an object has been collected and for caching objects without impeding their collection.</p>
+
+<p>Rather than provide an interface to individual weak references, Lua provides a higher-level construct called a weak table. In a weak table the keys and/or values are weak references. If a key or value of such a table is collected, that entry of the table will be removed.</p>
+
+<p>Here is a complete, although very contrived, example of a weak table in action:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>t = {}
+setmetatable(t, { __mode = 'v' })
+
+do
+    local someval = {}
+    t['foo'] = someval
+end
+
+collectgarbage()
+
+for k, v in pairs(t) do
+    print(k, v)
+end
+</code></pre></div></div>
+
+<p>Try this example with and without the collectgarbage() call commented out. With the call, the program will print nothing, as the value of the lone table entry will be collected.</p>
+
+<p>A weak table is created by setting its metatable to a metatable that has a __mode field. In the above example we enable weak values with v (likewise k is for keys). The purpose of creating the test value someval as a local variable in a do block is so that we may force garbage collection of the value later with a call to collectgarbage. Note that using a literal such as a string or number for someval would not have worked, as literals are never garbage collected.</p>
+
+<p>Note that once a table has been used as a metatable then it is not legal to change the metatable’s __mode field (for the exact restrictions see Section 2.10.2 in the Reference Manual [1]). In other words the following code, which attempts to change a table to a weak table by changing its metatable’s __mode field, is wrong:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getmetatable(t).__mode = 'v'
+</code></pre></div></div>
+
+<p>A table needs to have its __mode field defined before it is used as a metatable. Hence the following style, which creates an empty table and then immediately gives it a metatable, is correct:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local weaktable = setmetatable({}, {__mode="k"})
+</code></pre></div></div>
+
+<p>Weak tables are often used in situations where you wish to annotate values without altering them. For example, you might want to give objects a name which could be used when they were printed out. In this case, you would not want the fact that an object had been named to prevent it from being garbage collected, so you would want to use a table with weak keys (the objects):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local names = setmetatable({}, {__mode = "k"})
+
+-- with the example below, this would be a local function
+function name(obj, str)
+  names[obj] = tostring(str)
+  return obj
+end
+
+-- keep the original print function available
+local _print = print
+function print(...)
+  for i = 1, arg.n do
+    local name = names[arg[i]]
+    if name then arg[i] = name end
+  end
+  _print(unpack(arg))
+end
+</code></pre></div></div>
+
+<p>You might want to use this for debugging, by automatically naming global variables. You can do this by adding a simple metamethod (see MetamethodsTutorial) to the globals table:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local globalsmeta = {}
+
+local nameable_type = {["function"] = true, userdata = true, thread = true, table = true}
+
+function globalsmeta:__newindex(k, v)
+  if nameable_type[type(v)] then name(v, k) end
+  rawset(self, k, v)
+end
+
+setmetatable(_G, globalsmeta)
+</code></pre></div></div>
+
+<p>Note how we avoid doing a complex series of if then elseif… statements by using a constant table to do a single check on the type of the value.</p>
+
+<p>For advanced tutorial readers, the text of the __newindex function could be written as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rawset(self, k, nameable_type[type(v)] and name(v, k) or v)
+</code></pre></div></div>
+
+<p>RecentChanges · preferences
+edit · history
+Last edited January 4, 2014 11:40 pm GMT (diff)</p>
+</div>
+            <div style="clear:both;">
+              <p class="text-center">
+                <br />
+                
+              </p>
+            </div>
+            <hr>
+            
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/lua_garbage_collection/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/docs/lua_for_loop/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+      </ul>
+    <div class="clear"></div>
+    
+
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            Notes 2019 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/js/bootstrap.min.js "></script>
+<script src="/js/typeahead.bundle.min.js "></script>
+
+<script src="/js/main.js "></script>
+
+</body>
+
+</html>

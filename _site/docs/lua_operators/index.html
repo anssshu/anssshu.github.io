@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/favicon.ico?1">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Lua Operators | Notes</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="Lua Operators" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Operators Tutorial lua-users home wiki" />
+<meta property="og:description" content="Operators Tutorial lua-users home wiki" />
+<link rel="canonical" href="http://localhost:4000/docs/lua_operators/" />
+<meta property="og:url" content="http://localhost:4000/docs/lua_operators/" />
+<meta property="og:site_name" content="Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-18T11:43:34+02:00" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/lua_operators/","headline":"Lua Operators","dateModified":"2019-04-18T11:43:34+02:00","datePublished":"2019-04-18T11:43:34+02:00","description":"Operators Tutorial lua-users home wiki","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="canonical" href="http://localhost:4000/docs/lua_operators/">
+    <link rel="alternate" type="application/rss+xml" title="Notes" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="/">
+                <span><img src="/img/logonav.png" alt="Logo"></span> Notes
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ><a href="/blog/2017/02/01/welcome-to-jekyll/">Blog</a></li>
+                
+            </ul>
+            <div class="navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <input id="search-box" type="search" class="form-control" placeholder="Search...">
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href=""><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+            Notes
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-1" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/home/">Welcome to Notes</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/cheatsheet/">Markdown Cheatsheet</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+            Jekyll
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-2" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/intro/">Intro to Jekyll</a>
+          
+            
+            
+            <a class="list-group-item " href=""></a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+            Github
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-3" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/github_intro/">Github Notes</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+            Sketching
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/sketch/">Sketching Youtube tutorial collections</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+            Lua
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse" id="collapse-5" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_dataTypes/">Lua Data Types</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_assignment/">Lua Assignment</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_numbers/">Lua Numbers</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_strings/">Lua Strings</a>
+          
+            
+            
+            <a class="list-group-item active" href="/docs/lua_operators/">Lua Operators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_controlstructure/">Lua Control Structures</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_tables/">Lua Tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_function/">Lua Functions</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_scope/">Lua Scope</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_metamethods/">Lua Metamethods</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_environments/">Lua Environments</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_modules/">Lua Modules</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_objects/">Lua Objects</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_patterns/">Lua Patterns</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_coroutines/">Lua Coroutines</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_iterators/">lua iterators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_garbage_collection/">Lua Garbage Collection</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_weekTables/">Lua Weak tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_for_loop/">Lua For Loop</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_inheritance/">Lua inheritance</a>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+        </div>
+
+        <div class="col-md-8">
+            <h1>Lua Operators</h1>
+            <div id="markdown-content-container"><p>Operators Tutorial</p>
+
+<p>lua-users home
+	wiki</p>
+
+<p>Expressions are evaluated in order to perform calculations which may assign values to variables or pass arguments to functions. Expressions are covered pretty well in section 2.5 of the Reference Manual.[1] Expressions are covered here for completeness and to offer more examples.</p>
+
+<p>We’ll use the = expression shorthand notation for this page. The values can easily be assigned to a variable, e.g.,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; x = 7
+&gt; print(x)
+7
+&gt; = 7
+7
+</code></pre></div></div>
+
+<p>Arithmetic expressions</p>
+
+<p>Lua has the usual binary arithmetic operators.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = 2+3, 5-12, 2*7, 7/8
+5       -7      14      0.875
+&gt; = 5*(2-8.3)/77.7+99.1
+98.694594594595
+</code></pre></div></div>
+
+<p>Unary negation:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = -(-10), -(10)
+10      -10
+</code></pre></div></div>
+
+<p>Modulo (division remainder):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = 15%7, -4%3, 5.5%1
+1       -1       0.5
+</code></pre></div></div>
+
+<p>Power of:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = 7^2, 107^0, 2^8
+49      1       256
+</code></pre></div></div>
+
+<p>Relational expressions</p>
+
+<p>Relational operators are supplied which return the boolean values true or false.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>== equal to
+~= not equal to
+&lt; less than
+&gt; greater than
+&lt;= less than or equal to
+&gt;= greater than or equal to 
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = 1 == 1, 1 == 0
+true    false
+&gt; = 1 ~= 1, 1 ~= 0
+false   true
+&gt; = 3 &lt; 7, 7 &lt; 7, 8 &lt; 7
+true	false	false
+&gt; = 3 &gt; 7, 7 &gt; 7, 8 &gt; 7
+false	false	true
+&gt; = 3 &lt;= 7, 7 &lt;= 7, 8 &lt;= 7
+true    true    false
+&gt; = 3 &gt;= 7, 7 &gt;= 7, 8 &gt;= 7
+false   true    true
+</code></pre></div></div>
+
+<p>These also work on strings (alphabetical order) and other types.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = "abc" &lt; "def"
+true
+&gt; = "abc" &gt; "def"
+false
+&gt; = "abb" &lt; "baa"
+true
+&gt; = "abc" == "abc"
+true
+&gt; = "abc" == "a".."bc"
+true
+</code></pre></div></div>
+
+<p>Objects will not be equal if the types are different or refer to different objects.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = {} == "table"
+false
+&gt; = {} == {}  -- two different tables are created here
+false
+&gt; t = {}
+&gt; t2 = t
+&gt; = t == t2   -- we're referencing the same table here
+true
+</code></pre></div></div>
+
+<p>Coercion does not work here, the types must be converted explicitly. See NumbersTutorial and StringsTutorial for explanation of coercion.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = "10" == 10
+false
+&gt; = tonumber("10") == 10
+true
+</code></pre></div></div>
+
+<p>Logical operators</p>
+
+<p>Lua provides the logical operators and, or and not. In Lua both nil and the boolean value false represent false in a logical expression. Anything that is not false (either nil or false) is true, including 0, which might be surprising coming from some other languages. There are more notes on the implications of this at the end of this page.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = false==nil   -- although they are both considered false by logical operators, they're still different values
+false
+&gt; = true==false, true~=false
+false   true
+&gt; = 1==0
+false
+</code></pre></div></div>
+
+<p>not</p>
+
+<p>The keyword not inverts a logical expression value:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = true, false, not true, not false
+true    false   false   true
+&gt; = not nil       -- nil represents false
+true
+&gt; = not not true  -- true is not not true!
+true
+&gt; = not "foo"     -- anything not false or nil is true
+false
+</code></pre></div></div>
+
+<p>and</p>
+
+<p>The binary operator and does not necessarily return a boolean value true or false to the logical expression x and y. In some languages the and operator returns a boolean dependent on the two inputs. Rather in Lua, it returns the first argument (without even executing the second one) if its value is false or nil, and the second argument if the first argument is not false or nil. So, a boolean is only returned if the first argument is false or the second argument is a boolean. Aka minimal evaluation.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = false and true  -- false is returned because it is the first argument
+false
+&gt; = nil and true    -- as above
+nil
+&gt; = nil and false
+nil
+&gt; = nil and "hello", false and "hello"
+nil     false
+&gt; = false and print("hello") -- the print function isn't evaluated, so "hello" isn't printed
+false
+</code></pre></div></div>
+
+<p>All of the above expressions return the first argument. All of the following expressions return the second argument, as the first is true.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = true and false
+false
+&gt; = true and true
+true
+&gt; = 1 and "hello", "hello" and "there"
+hello   there
+&gt; = true and nil
+nil
+&gt; = true and print("hello") -- the print function is evaluated here, so "hello" is printed
+hello
+nil
+</code></pre></div></div>
+
+<p>As you can see the logical expressions are still evaluated correctly but we have some interesting behaviour because of the values returned.</p>
+
+<p>or</p>
+
+<p>The or binary operator also does not necessarily return a boolean value (see notes for and above). If the first argument is not false or nil it is returned, otherwise the second argument is returned. So, a boolean is only returned if the first argument is true or the second argument is a boolean.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = true or false
+true
+&gt; = true or nil
+true
+&gt; = "hello" or "there", 1 or 0
+hello   1
+&gt; = true or print("hello") -- the print function isn't evaluated, so "hello" isn't printed
+true
+</code></pre></div></div>
+
+<p>All of the above expressions return the first argument. All of the following expressions return the second argument, as the first is false or nil.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = false or true
+true
+&gt; = nil or true
+true
+&gt; = nil or "hello"
+hello
+&gt; = false or print("hello") -- the print function is evaluated here, so "hello" is printed
+hello
+</code></pre></div></div>
+
+<p>This can be a very useful property. For example, setting default values in a function:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; function foo(x)
+&gt;&gt;  local value = x or "default"  -- if argument x is false or nil, value becomes "default"
+&gt;&gt;  print(value, x)
+&gt;&gt; end
+&gt;
+&gt; foo()       -- no arguments, so x is nil
+default nil
+&gt; foo(1)
+1       1
+&gt; foo(true)
+true    true
+&gt; foo("hello")
+hello   hello
+</code></pre></div></div>
+
+<p>Ternary operators</p>
+
+<p>Even though Lua doesn’t have a ternary operator (if/else expression), it’s possible to create similar behavior with and and or:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>value = condition and trueval or falseval;
+</code></pre></div></div>
+
+<p>If condition is true, trueval is returned, otherwise falseval is returned. To help understand this, remember that and has a higher precedence than or:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>value = (condition and trueval) or falseval;
+</code></pre></div></div>
+
+<p>If condition is true, this causes the and to run trueval and return its value. Otherwise, the whole and part of the expression will be false, triggering the or expression to run falseval. Note that this has the issue that falseval will be run if trueval is nil or false. This can be worked around by negating the condition if you know falseval is always a “true” value, otherwise you’ll just need to use an if-then-else statement.</p>
+
+<p>This does not work in a case of “value = false and true or false”.
+RecentChanges · preferences
+edit · history
+Last edited May 9, 2014 4:28 pm GMT (diff)</p>
+</div>
+            <div style="clear:both;">
+              <p class="text-center">
+                <br />
+                
+              </p>
+            </div>
+            <hr>
+            
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/lua_strings/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/docs/lua_controlstructure/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+      </ul>
+    <div class="clear"></div>
+    
+
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            Notes 2019 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/js/bootstrap.min.js "></script>
+<script src="/js/typeahead.bundle.min.js "></script>
+
+<script src="/js/main.js "></script>
+
+</body>
+
+</html>

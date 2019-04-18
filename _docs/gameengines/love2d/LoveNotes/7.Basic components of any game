@@ -1,0 +1,52 @@
+SEE EXAMPLES ON THE FOLLOWING CONCEPTS
+--------------------------------------
+
+---Fonts and text on screen---------font.lua
+
+---Sprite or texture----------------sprite.lua
+
+---Onscreen drawing-----------------drawOnScreen.lua
+
+---Backgrounds   -------------------background.lua
+
+---Animations    -----------------  animatedSprite.lua
+
+---Tilemaps    --------------------simpleMap.lua
+
+---Sound----------------------------audio.lua
+
+---Keboard interaction--------------keyboard.lua
+
+---Touch interaction--------------------------------------not yet
+
+---Mouse interaction-----------------mouse.lua
+
+---Objects their adition and removal ----- objectAddRemove.lua
+
+---Menus------------------------------through sprite and mouse click input
+
+---Splash screens----------------------use sprite for splash screen
+
+---Level or screen changing logic---------create a class table to store level classes and draw their instances to change stage
+
+---Collision---------------------------------physicsCollision.lua
+
+---Particles---------------------------------particles.lua
+
+---Physics-----------------------------------physics.lua
+
+---Inter object communication------------------through container table
+
+---Timers--------------------------timer.lua
+
+---File handling--------------------------lua standard lib
+
+---Storage------------------use lua simple files
+
+---Networking---------------------network.lua
+
+---AI -----------------------------------------program yourself
+---Camera---------------------------------camera.lua
+
+
+

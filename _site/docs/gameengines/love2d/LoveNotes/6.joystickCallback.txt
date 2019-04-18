@@ -1,0 +1,176 @@
+---GAMEPADAXIS
+Called when a Joystick's virtual gamepad axis is moved.
+Function
+Synopsis
+love.gamepadaxis( joystick, axis, value )
+Arguments
+
+Joystick joystick
+    The joystick object. 
+GamepadAxis axis
+    The virtual gamepad axis. 
+number value
+    The new axis value. 
+
+Returns
+
+Nothing. 
+-------------------------------------------------------------
+---GAMEPADPRESSED
+Called when a Joystick's virtual gamepad button is pressed.
+Function
+Synopsis
+love.gamepadpressed( joystick, button )
+Arguments
+
+Joystick joystick
+    The joystick object. 
+GamepadButton button
+    The virtual gamepad button. 
+
+Returns
+
+Nothing. 
+------------------------------------------------------------
+---GAMEPADRELEASED
+Called when a Joystick's virtual gamepad button is released.
+Function
+Synopsis
+love.gamepadreleased( joystick, button )
+Arguments
+
+Joystick joystick
+    The joystick object. 
+GamepadButton button
+    The virtual gamepad button. 
+
+Returns
+
+Nothing. 
+------------------------------------------------------------
+---JOYSTICKADDED
+Called when a Joystick is connected.
+Function
+Synopsis
+love.joystickadded( joystick )
+Arguments
+
+Joystick joystick
+    The newly connected Joystick object. 
+
+Returns
+
+Nothing. 
+----------------------------------------------------------
+---love.joystickaxis
+
+Available since LÖVE 0.9.0
+This callback is not supported in earlier versions.
+
+Called when a joystick axis moves.
+Function
+Synopsis
+love.joystickaxis( joystick, axis, value )
+Arguments
+
+Joystick joystick
+    The joystick object. 
+number axis
+    The axis number. 
+number value
+    The new axis value. 
+
+Returns
+
+Nothing. 
+--------------------------------------------------------------
+---love.joystickhat
+Available since LÖVE 0.9.0
+This callback is not supported in earlier versions.
+
+Called when a joystick hat direction changes.
+Function
+Synopsis
+love.joystickhat( joystick, hat, direction )
+Arguments
+
+Joystick joystick
+    The joystick object. 
+number hat
+    The hat number. 
+JoystickHat direction
+    The new hat direction. 
+
+Returns
+
+Nothing. 
+----------------------------------------------------
+---joystickpressed
+function love.joystickpressed(joystick,button)
+   player:jumping()
+end
+
+--inside playerClass
+function player:jumping()
+   if joyStick:isGamepadDown('a') then
+        if self.jump then
+           self.speedY = self.jumpSpeed
+            self.jump = false
+        end
+    end
+end
+------------------------------------------------------------
+---joystickreleased
+    	
+
+love.joystickreleased
+
+Called when a joystick button is released.
+Function
+Available since LÖVE 0.9.0
+This variant is not supported in earlier versions.
+Synopsis
+love.joystickreleased( joystick, button )
+Arguments
+
+Joystick joystick
+    The joystick object. 
+number button
+    The button number. 
+
+Returns
+
+Nothing.
+Function
+Removed in LÖVE 0.9.0
+This variant is not supported in that and later versions.
+Synopsis
+love.joystickreleased( joystick, button )
+Arguments
+
+number joystick
+    The joystick number. 
+number button
+    The button number. 
+
+Returns
+
+Nothing. 
+---------------------------------------------------------------------
+---love.joystickremoved
+Available since LÖVE 0.9.0
+This function is not supported in earlier versions.
+
+Called when a Joystick is disconnected.
+Function
+Synopsis
+love.joystickremoved( joystick )
+Arguments
+
+Joystick joystick
+    The now-disconnected Joystick object. 
+
+Returns
+
+Nothing. 
+--------------------------------------------------------------------------

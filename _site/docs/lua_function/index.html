@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/favicon.ico?1">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Lua Functions | Notes</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="Lua Functions" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Functions are the main mechanism for abstraction of statements and expressions in Lua. Functions can both carry out a specific task (what is sometimes called procedure or subroutine in other languages) or compute and return values. In the first case, we use a function call as a statement; in the second case, we use it as an expression:" />
+<meta property="og:description" content="Functions are the main mechanism for abstraction of statements and expressions in Lua. Functions can both carry out a specific task (what is sometimes called procedure or subroutine in other languages) or compute and return values. In the first case, we use a function call as a statement; in the second case, we use it as an expression:" />
+<link rel="canonical" href="http://localhost:4000/docs/lua_function/" />
+<meta property="og:url" content="http://localhost:4000/docs/lua_function/" />
+<meta property="og:site_name" content="Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-18T11:43:34+02:00" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/lua_function/","headline":"Lua Functions","dateModified":"2019-04-18T11:43:34+02:00","datePublished":"2019-04-18T11:43:34+02:00","description":"Functions are the main mechanism for abstraction of statements and expressions in Lua. Functions can both carry out a specific task (what is sometimes called procedure or subroutine in other languages) or compute and return values. In the first case, we use a function call as a statement; in the second case, we use it as an expression:","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="canonical" href="http://localhost:4000/docs/lua_function/">
+    <link rel="alternate" type="application/rss+xml" title="Notes" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="/">
+                <span><img src="/img/logonav.png" alt="Logo"></span> Notes
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ><a href="/blog/2017/02/01/welcome-to-jekyll/">Blog</a></li>
+                
+            </ul>
+            <div class="navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <input id="search-box" type="search" class="form-control" placeholder="Search...">
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href=""><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+            Notes
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-1" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/home/">Welcome to Notes</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/cheatsheet/">Markdown Cheatsheet</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+            Jekyll
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-2" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/intro/">Intro to Jekyll</a>
+          
+            
+            
+            <a class="list-group-item " href=""></a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+            Github
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-3" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/github_intro/">Github Notes</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+            Sketching
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/sketch/">Sketching Youtube tutorial collections</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+            Lua
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse" id="collapse-5" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_dataTypes/">Lua Data Types</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_assignment/">Lua Assignment</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_numbers/">Lua Numbers</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_strings/">Lua Strings</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_operators/">Lua Operators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_controlstructure/">Lua Control Structures</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_tables/">Lua Tables</a>
+          
+            
+            
+            <a class="list-group-item active" href="/docs/lua_function/">Lua Functions</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_scope/">Lua Scope</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_metamethods/">Lua Metamethods</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_environments/">Lua Environments</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_modules/">Lua Modules</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_objects/">Lua Objects</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_patterns/">Lua Patterns</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_coroutines/">Lua Coroutines</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_iterators/">lua iterators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_garbage_collection/">Lua Garbage Collection</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_weekTables/">Lua Weak tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_for_loop/">Lua For Loop</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_inheritance/">Lua inheritance</a>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+        </div>
+
+        <div class="col-md-8">
+            <h1>Lua Functions</h1>
+            <div id="markdown-content-container"><p>Functions are the main mechanism for abstraction of statements and expressions in Lua. Functions can both carry out a specific task (what is sometimes called procedure or subroutine in other languages) or compute and return values. In the first case, we use a function call as a statement; in the second case, we use it as an expression:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print(8*9, 9/8)
+a = math.sin(3) + math.cos(10)
+print(os.date()) In both cases, we write a list of arguments enclosed in parentheses. If the function call has no arguments, we must write an empty list () to indicate the call. There is a special case to this rule: If the function has one single argument and this argument is either a literal string or a table constructor, then the parentheses are optional:
+print "Hello World"     &lt;--&gt;     print("Hello World")
+dofile 'a.lua'          &lt;--&gt;     dofile ('a.lua')
+print [[a multi-line    &lt;--&gt;     print([[a multi-line
+ message]]                        message]])
+f{x=10, y=20}           &lt;--&gt;     f({x=10, y=20})
+type{}                  &lt;--&gt;     type({}) Lua also offers a special syntax for object-oriented calls, the colon operator. An expression like o:foo(x) is just another way to write o.foo(o, x), that is, to call o.foo adding o as a first extra argument. In Chapter 16 we will discuss such calls (and object-oriented programming) in more detail.
+</code></pre></div></div>
+
+<p>Functions used by a Lua program can be defined both in Lua and in C (or in any other language used by the host application). For instance, all library functions are written in C; but this fact has no relevance to Lua programmers. When calling a function, there is no difference between functions defined in Lua and functions defined in C.</p>
+
+<p>As we have seen in other examples, a function definition has a conventional syntax; for instance</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-- add all elements of array `a'
+function add (a)
+  local sum = 0
+  for i,v in ipairs(a) do
+    sum = sum + v
+  end
+  return sum
+end
+</code></pre></div></div>
+
+<p>In that syntax, a function definition has a name (add, in the previous example), a list of parameters, and a body, which is a list of statements.
+Parameters work exactly as local variables, initialized with the actual arguments given in the function call. You can call a function with a number of arguments different from its number of parameters. Lua adjusts the number of arguments to the number of parameters, as it does in a multiple assignment: Extra arguments are thrown away; extra parameters get nil. For instance, if we have a function like</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function f(a, b) return a or b end we will have the following mapping from arguments to parameters:
+CALL             PARAMETERS
+   
+f(3)             a=3, b=nil
+f(3, 4)          a=3, b=4
+f(3, 4, 5)       a=3, b=4   (5 is discarded) Although this behavior can lead to programming errors (easily spotted at run time), it is also useful, especially for default arguments. For instance, consider the following function, to increment a global counter.
+function incCount (n)
+  n = n or 1
+  count = count + n
+end This function has 1 as its default argument; that is, the call incCount(), without arguments, increments count by one. When you call incCount(), Lua first initializes n with nil; the or results in its second operand; and as a result Lua assigns a default 1 to n.
+</code></pre></div></div>
+</div>
+            <div style="clear:both;">
+              <p class="text-center">
+                <br />
+                
+              </p>
+            </div>
+            <hr>
+            
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/lua_tables/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/docs/lua_scope/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+      </ul>
+    <div class="clear"></div>
+    
+
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            Notes 2019 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/js/bootstrap.min.js "></script>
+<script src="/js/typeahead.bundle.min.js "></script>
+
+<script src="/js/main.js "></script>
+
+</body>
+
+</html>

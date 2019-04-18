@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/favicon.ico?1">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Lua Modules | Notes</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="Lua Modules" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Modules Tutorial lua-users home wiki" />
+<meta property="og:description" content="Modules Tutorial lua-users home wiki" />
+<link rel="canonical" href="http://localhost:4000/docs/lua_modules/" />
+<meta property="og:url" content="http://localhost:4000/docs/lua_modules/" />
+<meta property="og:site_name" content="Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-18T11:43:34+02:00" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/lua_modules/","headline":"Lua Modules","dateModified":"2019-04-18T11:43:34+02:00","datePublished":"2019-04-18T11:43:34+02:00","description":"Modules Tutorial lua-users home wiki","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="canonical" href="http://localhost:4000/docs/lua_modules/">
+    <link rel="alternate" type="application/rss+xml" title="Notes" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="/">
+                <span><img src="/img/logonav.png" alt="Logo"></span> Notes
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ><a href="/blog/2017/02/01/welcome-to-jekyll/">Blog</a></li>
+                
+            </ul>
+            <div class="navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <input id="search-box" type="search" class="form-control" placeholder="Search...">
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href=""><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+            Notes
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-1" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/home/">Welcome to Notes</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/cheatsheet/">Markdown Cheatsheet</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+            Jekyll
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-2" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/intro/">Intro to Jekyll</a>
+          
+            
+            
+            <a class="list-group-item " href=""></a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+            Github
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-3" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/github_intro/">Github Notes</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+            Sketching
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/sketch/">Sketching Youtube tutorial collections</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+            Lua
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse" id="collapse-5" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_dataTypes/">Lua Data Types</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_assignment/">Lua Assignment</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_numbers/">Lua Numbers</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_strings/">Lua Strings</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_operators/">Lua Operators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_controlstructure/">Lua Control Structures</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_tables/">Lua Tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_function/">Lua Functions</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_scope/">Lua Scope</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_metamethods/">Lua Metamethods</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_environments/">Lua Environments</a>
+          
+            
+            
+            <a class="list-group-item active" href="/docs/lua_modules/">Lua Modules</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_objects/">Lua Objects</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_patterns/">Lua Patterns</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_coroutines/">Lua Coroutines</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_iterators/">lua iterators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_garbage_collection/">Lua Garbage Collection</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_weekTables/">Lua Weak tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_for_loop/">Lua For Loop</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_inheritance/">Lua inheritance</a>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+        </div>
+
+        <div class="col-md-8">
+            <h1>Lua Modules</h1>
+            <div id="markdown-content-container"><p>Modules Tutorial</p>
+
+<p>lua-users home
+	wiki</p>
+
+<p>Creating and using Modules</p>
+
+<p>There are actually two ways to make modules, the old (and deprecated) way for 5.0 and early 5.1, and the new way for 5.1 and 5.2. We will mainly explain the new way, but also the old because a lot of programs that you might come across still use it.</p>
+
+<p>Create an example file mymodule.lua with the following content:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local mymodule = {}
+
+function mymodule.foo()
+    print("Hello World!")
+end
+
+return mymodule
+</code></pre></div></div>
+
+<p>Now to use this new module in the interactive interpreter, just do:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; mymodule = require "mymodule"
+&gt; mymodule.foo()
+Hello World!
+</code></pre></div></div>
+
+<p>In an actual script file, it would be recommended to make the mymodule variable local:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local mymodule = require "mymodule"
+mymodule.foo()
+</code></pre></div></div>
+
+<p>But since we’re in the interactive interpreter, that would make it out of scope on the next line, so we have to put it in a global variable.</p>
+
+<p>So that you can require the same module in different files without re-running the module code, Lua caches modules in the package.loaded table. To demonstrate this, say we changed foo in mymodule.lua to now print “Hello Module!” instead. If we just continued in the same session as above the following would happen:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; mymodule = require "mymodule"
+&gt; mymodule.foo()
+Hello World!
+</code></pre></div></div>
+
+<p>To actually reload the module, we need to remove it from the cache first:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; package.loaded.mymodule = nil
+&gt; mymodule = require "mymodule"
+&gt; mymodule.foo()
+Hello Module!
+</code></pre></div></div>
+
+<p>Another nice thing is that since they’re ordinary tables stored in a variable, modules can be named arbitrarily. Say we think that “mymodule” is too long to type every time we want to use a function from it:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; m = require "mymodule"
+&gt; m.foo()
+Hello Module!
+</code></pre></div></div>
+
+<p>Other ways to create a module table</p>
+
+<p>There are different ways of putting together a module table, that you can choose depending on your situation and personal preference:</p>
+
+<p>Create a table at the top and add your functions to it:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local mymodule = {}
+
+local function private()
+    print("in private function")
+end
+
+function mymodule.foo()
+    print("Hello World!")
+end
+
+function mymodule.bar()
+    private()
+    mymodule.foo() -- need to prefix function call with module
+end
+
+return mymodule
+</code></pre></div></div>
+
+<p>Make all functions local and put them in a table at the end:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local function private()
+    print("in private function")
+end
+
+local function foo()
+    print("Hello World!")
+end
+
+local function bar()
+    private()
+    foo() -- do not prefix function call with module
+end
+
+return {
+  foo = foo,
+  bar = bar,
+}
+</code></pre></div></div>
+
+<p>A combination of the two examples above:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local mymodule = {}
+
+local function private()
+    print("in private function")
+end
+
+local function foo()
+    print("Hello World!")
+end
+mymodule.foo = foo
+
+local function bar()
+    private()
+    foo()
+end
+mymodule.bar = bar
+
+return mymodule
+</code></pre></div></div>
+
+<p>You can even change the chunk’s environment to store any global variables you create into the module:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local print = print -- the new env will prevent you from seeing global variables
+
+local M = {}
+if setfenv then
+	setfenv(1, M) -- for 5.1
+else
+	_ENV = M -- for 5.2
+end
+
+local function private()
+    print("in private function")
+end
+
+function foo()
+    print("Hello World!")
+end
+
+function bar()
+    private()
+    foo()
+end
+
+return M
+</code></pre></div></div>
+
+<p>Or if you don’t want to have to save all the globals you need into locals:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local M = {}
+do
+	local globaltbl = _G
+	local newenv = setmetatable({}, {
+		__index = function (t, k)
+			local v = t[k]
+			if v == nil then return globaltbl[k] end
+			return v
+		end,
+		__newindex = M,
+	})
+	if setfenv then
+		setfenv(1, newenv) -- for 5.1
+	else
+		_ENV = newenv -- for 5.2
+	end
+end
+
+local function private()
+    print("in private function")
+end
+
+function foo()
+    print("Hello World!")
+end
+
+function bar()
+    private()
+    foo()
+end
+
+return M
+</code></pre></div></div>
+
+<p>Note that it might make access to global and module variables a bit slower, since it uses an __index function. And the reason an empty “proxy” table is used instead of giving the module an __index metamethod pointing to _G is because this would happen:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; require "mymodule"
+&gt; mymodule.foo()
+Hello World!
+&gt; mymodule.print("example") -- unwanted __index metamethod
+example
+</code></pre></div></div>
+
+<p>The old way of creating modules</p>
+
+<p>Lua 5.0 and 5.1 have a module function that’s used like this:</p>
+
+<p>mymodule.lua:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>module("mymodule", package.seeall)
+
+function foo() -- create it as if it's a global function
+    print("Hello World!")
+end
+</code></pre></div></div>
+
+<p>And it would be used like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; require "mymodule"
+&gt; mymodule.foo()
+Hello World!
+</code></pre></div></div>
+
+<p>The way it works is it creates a new table for the module, stores it in the global named by the first argument to module, and sets it as the environment for the chunk, so if you create a global variable, it gets stored in the module table.</p>
+
+<p>This would make it so the module can’t see global variables (like print). One solution would be so store all needed standard functions in locals before calling module, but that can be tedious, so the solution was module’s second parameter, which should be a function that’s called with the module table as the parameter. package.seeall gives the module a metatable with an __index that points to the global table, so the module can now use global variables. The problem with this is that the user of the module can now see global variables through the module:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; require "mymodule"
+&gt; mymodule.foo()
+Hello World!
+&gt; mymodule.print("example")
+example
+</code></pre></div></div>
+
+<p>This is strange and unexpected at best, and could be a security hole at worst (if you give the module to a sandboxed script).</p>
+
+<p>The reason module is deprecated, apart from the above issue, is the fact that it forces a global name onto the user of the module, and the fact that in 5.2 a function can’t change the environment of its caller (at least not without the debug library), making module impossible to implement.</p>
+
+<p>Modules for 5.0 and older ones for 5.1 use this, but 5.2 and new 5.1 modules should use the new way (returning a table).</p>
+
+<p>The package table</p>
+
+<p>As already mentioned above Lua uses the package library to manage modules.</p>
+
+<p>package.path (for modules written in Lua) and package.cpath (for modules written in C) are the places where Lua looks for modules. They are semicolon-separated lists, and each entry can have a ? in it that’s replaced with the module name. This is an example of what they look like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; =package.path
+./?.lua;/usr/local/share/lua/5.1/?.lua;/usr/local/share/lua/5.1/?/init.lua;/usr/local/lib/lua/5.1/?.lua;/usr/local/lib/lua/5.1/?/init.lua;/usr/share/lua/5.1/?.lua;/usr/share/lua/5.1/?/init.lua
+&gt; =package.cpath
+./?.so;/usr/local/lib/lua/5.1/?.so;/usr/lib/x86_64-linux-gnu/lua/5.1/?.so;/usr/lib/lua/5.1/?.so;/usr/local/lib/lua/5.1/loadall.so
+</code></pre></div></div>
+
+<p>package.loaded is a table, where the already loaded modules are stored by name. As mentioned before, this acts as a cache so that modules aren’t loaded twice, instead require first tries getting the module from this table, and if it’s nil, then it tries loading.</p>
+
+<p>package.preload is a table of functions associated with module names. Before searching the filesystem, require checks if package.preload has a matching key. If so, the function is called and its result used as the return value of require.</p>
+
+<p>The other fields aren’t really important for general use of Lua modules, but if you are interested in how the module system works they are described in detail in the manual: [1]</p>
+
+<p>See Also</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>For more and in-depth information see the sample chapter of Programming in Lua, 2nd Edition [2] and LuaModuleFunctionCritiqued.
+TheEssenceOfLoadingCode - explains the relationship between the various ways of loading external code in Lua
+ModuleDefinition - various ways to define modules 
+</code></pre></div></div>
+
+<p>RecentChanges · preferences
+edit · history
+Last edited October 28, 2013 2:15 pm GMT (diff)</p>
+</div>
+            <div style="clear:both;">
+              <p class="text-center">
+                <br />
+                
+              </p>
+            </div>
+            <hr>
+            
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/lua_environments/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/docs/lua_objects/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+      </ul>
+    <div class="clear"></div>
+    
+
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            Notes 2019 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/js/bootstrap.min.js "></script>
+<script src="/js/typeahead.bundle.min.js "></script>
+
+<script src="/js/main.js "></script>
+
+</body>
+
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/favicon.ico?1">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>lua iterators | Notes</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="lua iterators" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Iterators Tutorial lua-users home wiki" />
+<meta property="og:description" content="Iterators Tutorial lua-users home wiki" />
+<link rel="canonical" href="http://localhost:4000/docs/lua_iterators/" />
+<meta property="og:url" content="http://localhost:4000/docs/lua_iterators/" />
+<meta property="og:site_name" content="Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-18T11:43:34+02:00" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/lua_iterators/","headline":"lua iterators","dateModified":"2019-04-18T11:43:34+02:00","datePublished":"2019-04-18T11:43:34+02:00","description":"Iterators Tutorial lua-users home wiki","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="canonical" href="http://localhost:4000/docs/lua_iterators/">
+    <link rel="alternate" type="application/rss+xml" title="Notes" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="/">
+                <span><img src="/img/logonav.png" alt="Logo"></span> Notes
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ><a href="/blog/2017/02/01/welcome-to-jekyll/">Blog</a></li>
+                
+            </ul>
+            <div class="navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <input id="search-box" type="search" class="form-control" placeholder="Search...">
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href=""><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+            Notes
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-1" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/home/">Welcome to Notes</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/cheatsheet/">Markdown Cheatsheet</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+            Jekyll
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-2" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/intro/">Intro to Jekyll</a>
+          
+            
+            
+            <a class="list-group-item " href=""></a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+            Github
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-3" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/github_intro/">Github Notes</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+            Sketching
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/sketch/">Sketching Youtube tutorial collections</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+            Lua
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse" id="collapse-5" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_dataTypes/">Lua Data Types</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_assignment/">Lua Assignment</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_numbers/">Lua Numbers</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_strings/">Lua Strings</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_operators/">Lua Operators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_controlstructure/">Lua Control Structures</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_tables/">Lua Tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_function/">Lua Functions</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_scope/">Lua Scope</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_metamethods/">Lua Metamethods</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_environments/">Lua Environments</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_modules/">Lua Modules</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_objects/">Lua Objects</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_patterns/">Lua Patterns</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_coroutines/">Lua Coroutines</a>
+          
+            
+            
+            <a class="list-group-item active" href="/docs/lua_iterators/">lua iterators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_garbage_collection/">Lua Garbage Collection</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_weekTables/">Lua Weak tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_for_loop/">Lua For Loop</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_inheritance/">Lua inheritance</a>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+        </div>
+
+        <div class="col-md-8">
+            <h1>lua iterators</h1>
+            <div id="markdown-content-container"><p>Iterators Tutorial</p>
+
+<p>lua-users home
+	wiki</p>
+
+<p>for statement iterators were covered in the ForTutorial. These are some notes on writing your own custom iterators.</p>
+
+<p>Algorithm</p>
+
+<p>We can write our own iterators to be called by the for statement. The following Lua pseudo-code describes how the for statement works with iterators:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-- Equivalent to "for var1, ···, varn in explist do block end"
+do
+  local iterator, state, var1 = explist
+  local var2, ... , varn
+  while true do
+    var1, ..., varn = iterator(state, var1)
+    if var1 == nil then break end
+      -- for block code
+  end
+end
+</code></pre></div></div>
+
+<p>The state and current key value are passed into the iterator. The iterator returns the new value of the key and any other values, e.g. the value generated by the iterator. If nil is returned then the for loop is terminated.</p>
+
+<p>Simple example</p>
+
+<p>The following iterator will return a sequence of squared values. When we return no value (i.e. n&gt;=state), Lua returns nil which terminates iteration. Notice the iterator is returning the next value in the sequence for a given iteration. We use the state to hold the number of iterations we wish to perform.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; function square(state,n) if n&lt;state then n=n+1 return n,n*n end end
+</code></pre></div></div>
+
+<p>Here is the for statement calling the iterator:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; for i,n in square,5,0 do print(i,n) end
+1       1
+2       4
+3       9
+4       16
+5       25
+</code></pre></div></div>
+
+<p>We could wrap the above example up (like pairs()) and provide a squares(nbvals) iterator constructor function. E.g.,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; function squares(nbvals) return square,nbvals,0 end  -- iterator,state,initial value
+</code></pre></div></div>
+
+<p>Now we can call it like pairs():</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; for i,n in squares(5) do print(i,n) end
+1       1
+2       4
+3       9
+4       16
+5       25
+</code></pre></div></div>
+
+<p>Complicated example</p>
+
+<p>The following iterator is similar to ipairs, but allows for multiple tables to be iterated over.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function ipairs(...)
+  local t = {...}
+  local tmp = {...}
+  -- if nothing to iterate over just return a dummy iterator
+  if #tmp==0 then
+    return function() end, nil, nil
+  end
+  local function mult_ipairs_it(t, i)
+    i = i+1
+    for j=1,#t do
+      local val = t[j][i]
+      if val == nil then return val end
+      tmp[j] = val
+    end
+    return i, unpack(tmp)
+  end
+  return mult_ipairs_it, t, 0
+end
+
+local t1 = {'a', 'b', 'c', 'd', 'e'}
+local t2 = {'A', 'B', 'C', 'D', 'E', 'F'}
+
+for k,v1,v2 in ipairs(t1, t2) do
+  print(k,v1,v2)
+end
+</code></pre></div></div>
+
+<p>Number Theory Example</p>
+
+<p>This iterator produces the prime divisors of its argument. It relies on the obvious fact that the smallest positive divisor, greater than one, of a nonzero integer must be a prime number.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>primdiv = function (n)
+   assert(n ~= 0)
+   if n &lt; 0 then n = -n end
+   local f = function (s,v) -- s not used
+                   local p
+                   if n == 1 then return end
+                   while n%v &gt; 0 and v*v &lt; n do
+                    if v == 2 then v = 3
+                    else v = v + 2 end
+                   end -- while
+                   if n%v == 0 then
+                    n = n/v; return v
+                   end
+                   if v*v &gt; n then
+                    p = n
+                    n = 1; return p
+                   end
+                 end -- function
+     return f,nil,2
+    end -- function
+
+ for p in primdiv(84) do io.write(p," ") end --&gt; 2 2 3 7
+</code></pre></div></div>
+
+<p>RiciLake says: I couldn’t resist rewriting that:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function primdiv(n)
+  assert(n ~= 0)
+  if n &lt; 0 then n = -n end
+  local function f(_, v)
+    if n &gt; 1 then
+      while n%v &gt; 0 do
+        v = v + (v == 2 and 1 or 2)
+        if v*v &gt; n then v = n end
+      end -- while
+      n = n / v
+      return v
+    end -- if
+  end -- function
+  return f,nil,2
+end -- function primdiv
+
+for p in primdiv(84) do io.write(p," ") end --&gt; 2 2 3 7
+</code></pre></div></div>
+
+<p>GavinWraith says: That is much nicer. I do regard, however, the use of function primdiv(n) as tantamount to methadone for first-order language junkies.</p>
+
+<p>Misc examples</p>
+
+<p>ipairs in Lua</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function ipairs(t)
+  local function ipairs_it(t, i)
+    i = i+1
+    local v = t[i]
+    if v ~= nil then
+      return i,v
+    else
+      return nil
+    end
+  end
+  return ipairs_it, t, 0
+end
+</code></pre></div></div>
+
+<p>Reversed ipairs in Lua</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function ripairs(t)
+  local max = 1
+  while t[max] ~= nil do
+    max = max + 1
+  end
+  local function ripairs_it(t, i)
+    i = i-1
+    local v = t[i]
+    if v ~= nil then
+      return i,v
+    else
+      return nil
+    end
+  end
+  return ripairs_it, t, max
+end
+
+-- from the end backwards
+function ripairs(t)
+  local function ripairs_it(t,i)
+    i=i-1
+    local v=t[i]
+    if v==nil then return v end
+    return i,v
+  end
+  return ripairs_it, t, #t+1
+end
+
+-- traversing the whole 'array'
+function ripairs(t)
+  idx={}
+  for k,v in pairs(t) do
+    if type(k)=="number" then idx[#idx+1]=k end
+  end
+  table.sort(idx)
+  local function ripairs_it(t,_)
+    if #idx==0 then return nil end
+    k=idx[#idx]
+    idx[#idx]=nil
+    return k,t[k]
+  end
+  return ripairs_it, t, nil
+end
+
+t1 = {'a', 'b', nil, 'd', 'e', nil}
+for k,v in ripairs(t1) do print(k,v) end
+--&gt; 5 e
+--&gt; 4 d
+--&gt; 2 b
+--&gt; 1 a
+</code></pre></div></div>
+
+<p>RecentChanges · preferences
+edit · history
+Last edited December 9, 2009 11:03 am GMT (diff)</p>
+</div>
+            <div style="clear:both;">
+              <p class="text-center">
+                <br />
+                
+              </p>
+            </div>
+            <hr>
+            
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/lua_coroutines/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/docs/lua_garbage_collection/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+      </ul>
+    <div class="clear"></div>
+    
+
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            Notes 2019 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/js/bootstrap.min.js "></script>
+<script src="/js/typeahead.bundle.min.js "></script>
+
+<script src="/js/main.js "></script>
+
+</body>
+
+</html>

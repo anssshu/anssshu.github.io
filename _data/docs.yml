@@ -16,3 +16,26 @@
 - title: Sketching
   docs:
   - sketch
+
+- title: Lua
+  docs:
+  - lua_dataTypes
+  - lua_assignment
+  - lua_numbers
+  - lua_strings
+  - lua_operators
+  - lua_controlstructure
+  - lua_tables
+  - lua_function
+  - lua_scope
+  - lua_metamethods
+  - lua_environments
+  - lua_modules
+  - lua_objects
+  - lua_patterns
+  - lua_coroutines
+  - lua_iterators
+  - lua_garbage_collection
+  - lua_weekTables
+  - lua_for_loop
+  - lua_inheritance  

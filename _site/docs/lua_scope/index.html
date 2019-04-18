@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/favicon.ico?1">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Lua Scope | Notes</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="Lua Scope" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Scope Tutorial lua-users home wiki" />
+<meta property="og:description" content="Scope Tutorial lua-users home wiki" />
+<link rel="canonical" href="http://localhost:4000/docs/lua_scope/" />
+<meta property="og:url" content="http://localhost:4000/docs/lua_scope/" />
+<meta property="og:site_name" content="Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-18T11:43:34+02:00" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/lua_scope/","headline":"Lua Scope","dateModified":"2019-04-18T11:43:34+02:00","datePublished":"2019-04-18T11:43:34+02:00","description":"Scope Tutorial lua-users home wiki","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="canonical" href="http://localhost:4000/docs/lua_scope/">
+    <link rel="alternate" type="application/rss+xml" title="Notes" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="/">
+                <span><img src="/img/logonav.png" alt="Logo"></span> Notes
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ><a href="/blog/2017/02/01/welcome-to-jekyll/">Blog</a></li>
+                
+            </ul>
+            <div class="navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <input id="search-box" type="search" class="form-control" placeholder="Search...">
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href=""><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+            Notes
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-1" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/home/">Welcome to Notes</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/cheatsheet/">Markdown Cheatsheet</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+            Jekyll
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-2" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/intro/">Intro to Jekyll</a>
+          
+            
+            
+            <a class="list-group-item " href=""></a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+            Github
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-3" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/github_intro/">Github Notes</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+            Sketching
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/sketch/">Sketching Youtube tutorial collections</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+            Lua
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse" id="collapse-5" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_dataTypes/">Lua Data Types</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_assignment/">Lua Assignment</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_numbers/">Lua Numbers</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_strings/">Lua Strings</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_operators/">Lua Operators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_controlstructure/">Lua Control Structures</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_tables/">Lua Tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_function/">Lua Functions</a>
+          
+            
+            
+            <a class="list-group-item active" href="/docs/lua_scope/">Lua Scope</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_metamethods/">Lua Metamethods</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_environments/">Lua Environments</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_modules/">Lua Modules</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_objects/">Lua Objects</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_patterns/">Lua Patterns</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_coroutines/">Lua Coroutines</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_iterators/">lua iterators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_garbage_collection/">Lua Garbage Collection</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_weekTables/">Lua Weak tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_for_loop/">Lua For Loop</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_inheritance/">Lua inheritance</a>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+        </div>
+
+        <div class="col-md-8">
+            <h1>Lua Scope</h1>
+            <div id="markdown-content-container"><p>Scope Tutorial</p>
+
+<p>lua-users home
+	wiki</p>
+
+<p>Until now you just assigned values to names, and could get back the value by using the name anywhere in the script. This is fine for small examples, but now that you know functions, it can be a big problem: what if different functions use the same name to store temporary values? They will conflict and overwrite each other, making your script an impossible-to-debug mess. The solution is to control where your variables exist using the local keyword.</p>
+
+<p>Interactive interpreter note</p>
+
+<p>The examples in this page will be written in the form of a script file instead of an interactive interpreter session, since local variables are really hard to work with in it. It will be explained why later.</p>
+
+<p>Creating local variables</p>
+
+<p>To create local variables, add the local keyword before the assignment:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local a = 5
+print(a)
+</code></pre></div></div>
+
+<p>You don’t need the local keyword any more when changing the variable:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local a = 5
+a = 6 -- changes the local a, doesn't create a global
+</code></pre></div></div>
+
+<p>Local variables only exist in the block they were created in. Outside of the block, they do not exist any more.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local a = 5
+print(a) --&gt; 5
+
+do
+  local a = 6 -- create a new local inside the do block instead of changing the existing a
+  print(a) --&gt; 6
+end
+
+print(a) --&gt; 5
+</code></pre></div></div>
+
+<p>The place where a variable is visible is called the “scope” of a variable.</p>
+
+<p>Now let’s use functions to show how this is really useful:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function bar()
+  print(x) --&gt; nil
+  local x = 6
+  print(x) --&gt; 6
+end
+
+function foo()
+  local x = 5
+  print(x) --&gt; 5
+  bar()
+  print(x) --&gt; 5
+end
+
+foo()
+</code></pre></div></div>
+
+<p>As you can see, each variable is visible from the point where it’s declared to the end of the block it’s declared in. Even though bar’s x exists at the same time as foo’s x, they’re not written in the same block, so they’re independent. This is what’s called lexical scoping.</p>
+
+<p>local function syntax sugar</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local function f() end
+
+-- is equivalent to
+
+local f
+f = function() end
+
+-- not
+
+local f = function() end
+</code></pre></div></div>
+
+<p>the difference between the last two examples is important: the local variable still doesn’t exist to the right of the = that gives it the initial value. So if the contents of the function used f to get a reference to itself, it will correctly get the local variable in the first and second versions, but the third version will get the global f (which will be nil, if not a completely unrelated value set by some other code).</p>
+
+<p>Closures</p>
+
+<p>Functions can use local variables created outside of them. These are called upvalues. A function that uses upvalues is called a closure:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local x = 5
+
+local function f() -- we use the "local function" syntax here, but that's just for good practice, the example will work without it
+  print(x)
+end
+
+f() --&gt; 5
+x = 6
+f() --&gt; 6
+</code></pre></div></div>
+
+<p>The function sees the change even if it’s changed outside of the function. This means that the variable in the function is not a copy, it’s shared with the outer scope.</p>
+
+<p>Also, even if the outer scope has passed, the function will still hold on to the variable. If there were two functions created in the scope, they will still share the variable after the outer scope is gone.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local function f()
+  local v = 0
+  local function get()
+    return v
+  end
+  local function set(new_v)
+    v = new_v
+  end
+  return {get=get, set=set}
+end
+
+local t, u = f(), f()
+print(t.get()) --&gt; 0
+print(u.get()) --&gt; 0
+t.set(5)
+u.set(6)
+print(t.get()) --&gt; 5
+print(u.get()) --&gt; 6
+</code></pre></div></div>
+
+<p>Since the two values returned by the two calls to f are independent, we can see that every time a function is called, it creates a new scope with new variables.</p>
+
+<p>Similarly, loops create a new scope on each iteration:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>local t = {}
+
+for i = 1, 10 do
+  t[i] = function() print(i) end
+end
+
+t[1]() --&gt; 1
+t[8]() --&gt; 8
+</code></pre></div></div>
+
+<p>Why are local variables difficult in the interactive interpreter</p>
+
+<p>Because it runs each line in a new scope:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; local a=5; print(a)
+5
+&gt; print(a) -- a is out of scope now, so global a is used
+nil
+</code></pre></div></div>
+
+<p>One thing you can do is wrap the code in a do-end block, but it won’t be interactive until you finish writing the whole block:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; do
+&gt;&gt;  local a = 5
+&gt;&gt;  print(a) -- works on a new line
+&gt;&gt; end
+5
+</code></pre></div></div>
+
+<p>Why not local by default?</p>
+
+<p>You might be coming from another language that makes variables local by default, and are probably thinking “what is the point of all this extra complication? Why not make variables local by default?”:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x = 3
+
+-- more code, you might have even forgotten about variable x by now...
+
+function ()
+  -- ...
+  x = 5 -- does this create a new local x, or does it change the outer one?
+  -- ...
+end
+
+-- some more code...
+</code></pre></div></div>
+
+<p>The problem with changing the outer one is that you might have intended to make a new variable, and instead change the existing one that you might not even know about, introducing bugs.</p>
+
+<p>The problem with creating a new one is what if you actually want to change the outer one?</p>
+
+<p>With the local keyword, it’s all explicit: without local, you change the existing variable, with it, you create a new one.</p>
+
+<p>For more discussion about this, see LocalByDefault.</p>
+
+<p>When to use local variables</p>
+
+<p>The general rule is to always use local variables, unless it’s necessary for every part of your program to be able to access the variable (which is very rare).</p>
+
+<p>Since it’s easy to forget a local, and since Lua doesn’t warn you about it (instead silently creating a global), it can be a source of bugs. One solution is to use a script like strict.lua (shown below), that uses metatables (mentioned in a later tutorial) to trap global variable creation and raise an error. You can put the script in a file in your project, and do require(“strict”) to use it.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--
+-- strict.lua
+-- checks uses of undeclared global variables
+-- All global variables must be 'declared' through a regular assignment
+-- (even assigning nil will do) in a main chunk before being used
+-- anywhere or assigned to inside a function.
+--
+
+local mt = getmetatable(_G)
+if mt == nil then
+  mt = {}
+  setmetatable(_G, mt)
+end
+
+__STRICT = true
+mt.__declared = {}
+
+mt.__newindex = function (t, n, v)
+  if __STRICT and not mt.__declared[n] then
+    local w = debug.getinfo(2, "S").what
+    if w ~= "main" and w ~= "C" then
+      error("assign to undeclared variable '"..n.."'", 2)
+    end
+    mt.__declared[n] = true
+  end
+  rawset(t, n, v)
+end
+  
+mt.__index = function (t, n)
+  if not mt.__declared[n] and debug.getinfo(2, "S").what ~= "C" then
+    error("variable '"..n.."' is not declared", 2)
+  end
+  return rawget(t, n)
+end
+
+function global(...)
+   for _, v in ipairs{...} do mt.__declared[v] = true end
+end
+</code></pre></div></div>
+
+<p>For more info about enforcing use of local variables, see DetectingUndefinedVariables.
+RecentChanges · preferences
+edit · history
+Last edited December 21, 2013 9:07 am GMT (diff)</p>
+</div>
+            <div style="clear:both;">
+              <p class="text-center">
+                <br />
+                
+              </p>
+            </div>
+            <hr>
+            
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/lua_function/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/docs/lua_metamethods/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+      </ul>
+    <div class="clear"></div>
+    
+
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            Notes 2019 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/js/bootstrap.min.js "></script>
+<script src="/js/typeahead.bundle.min.js "></script>
+
+<script src="/js/main.js "></script>
+
+</body>
+
+</html>

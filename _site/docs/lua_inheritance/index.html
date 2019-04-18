@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/favicon.ico?1">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Lua inheritance | Notes</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="Lua inheritance" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Inheritance Tutorial lua-users home wiki" />
+<meta property="og:description" content="Inheritance Tutorial lua-users home wiki" />
+<link rel="canonical" href="http://localhost:4000/docs/lua_inheritance/" />
+<meta property="og:url" content="http://localhost:4000/docs/lua_inheritance/" />
+<meta property="og:site_name" content="Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-18T11:43:34+02:00" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/lua_inheritance/","headline":"Lua inheritance","dateModified":"2019-04-18T11:43:34+02:00","datePublished":"2019-04-18T11:43:34+02:00","description":"Inheritance Tutorial lua-users home wiki","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="canonical" href="http://localhost:4000/docs/lua_inheritance/">
+    <link rel="alternate" type="application/rss+xml" title="Notes" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="/">
+                <span><img src="/img/logonav.png" alt="Logo"></span> Notes
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ><a href="/blog/2017/02/01/welcome-to-jekyll/">Blog</a></li>
+                
+            </ul>
+            <div class="navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <input id="search-box" type="search" class="form-control" placeholder="Search...">
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href=""><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+            Notes
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-1" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/home/">Welcome to Notes</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/cheatsheet/">Markdown Cheatsheet</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+            Jekyll
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-2" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/intro/">Intro to Jekyll</a>
+          
+            
+            
+            <a class="list-group-item " href=""></a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+            Github
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-3" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/github_intro/">Github Notes</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+            Sketching
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/sketch/">Sketching Youtube tutorial collections</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+            Lua
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse" id="collapse-5" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_dataTypes/">Lua Data Types</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_assignment/">Lua Assignment</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_numbers/">Lua Numbers</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_strings/">Lua Strings</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_operators/">Lua Operators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_controlstructure/">Lua Control Structures</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_tables/">Lua Tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_function/">Lua Functions</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_scope/">Lua Scope</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_metamethods/">Lua Metamethods</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_environments/">Lua Environments</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_modules/">Lua Modules</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_objects/">Lua Objects</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_patterns/">Lua Patterns</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_coroutines/">Lua Coroutines</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_iterators/">lua iterators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_garbage_collection/">Lua Garbage Collection</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_weekTables/">Lua Weak tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_for_loop/">Lua For Loop</a>
+          
+            
+            
+            <a class="list-group-item active" href="/docs/lua_inheritance/">Lua inheritance</a>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+        </div>
+
+        <div class="col-md-8">
+            <h1>Lua inheritance</h1>
+            <div id="markdown-content-container"><p>Inheritance Tutorial</p>
+
+<p>lua-users home
+	wiki</p>
+
+<p>This tutorial demonstrates a technique for implementing object oriented inheritance in Lua. Before continuing it is recommended that you familiarize yourself with ObjectOrientationTutorial and MetamethodsTutorial.</p>
+
+<p>Simple Classes</p>
+
+<p>The following example implements a class with no inheritance:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SimpleClass = {}
+SimpleClass_mt = { __index = SimpleClass }
+
+-- This function creates a new instance of SimpleClass
+--
+function SimpleClass:create()
+    local new_inst = {}    -- the new instance
+    setmetatable( new_inst, SimpleClass_mt ) -- all instances share the same metatable
+    return new_inst
+end
+
+-- Here are some functions (methods) for SimpleClass:
+
+function SimpleClass:className()
+    print( "SimpleClass" )
+end
+
+function SimpleClass:doSomething()
+    print( "Doing something" )
+end
+</code></pre></div></div>
+
+<p>In the above example, SimpleClass represents a table that holds all of our class’s methods, like a class declaration. SimpleClass_mt is the metatable we will attach to each class instance we create. The function SimpleClass:create() creates an instance of our class SimpleClass. Construction of a class instance involves creating an empty table and then attaching our SimpleClass metamethods to it. The result of attaching the metamethods is that the new instance looks to the metatable we attached for its customised behaviour.</p>
+
+<p>Method invocations on the instance will trigger the “index” event on the instance, causing a lookup on the “__index” member of the instance’s metatable. The __index member is simply a reference to SimpleClass. Therefore, method invocations on the instance will cause a lookup in the SimpleClass table.</p>
+
+<p>Here is an example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; simple = SimpleClass:create()
+&gt; 
+&gt; simple:className()
+SimpleClass
+&gt; 
+&gt; simple:doSomething()
+Doing something
+</code></pre></div></div>
+
+<p>Implementing Inheritance</p>
+
+<p>Now we want to create a new class SubClass that inherits and, optionally, overrides functions from SimpleClass.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-- Create a new class that inherits from a base class
+--
+function inheritsFrom( baseClass )
+
+    -- The following lines are equivalent to the SimpleClass example:
+
+    -- Create the table and metatable representing the class.
+    local new_class = {}
+    local class_mt = { __index = new_class }
+
+    -- Note that this function uses class_mt as an upvalue, so every instance
+    -- of the class will share the same metatable.
+    --
+    function new_class:create()
+        local newinst = {}
+        setmetatable( newinst, class_mt )
+        return newinst
+    end
+
+    -- The following is the key to implementing inheritance:
+
+    -- The __index member of the new class's metatable references the
+    -- base class.  This implies that all methods of the base class will
+    -- be exposed to the sub-class, and that the sub-class can override
+    -- any of these methods.
+    --
+    if baseClass then
+        setmetatable( new_class, { __index = baseClass } )
+    end
+
+    return new_class
+end
+</code></pre></div></div>
+
+<p>The function inheritsFrom(baseClass) takes a single argument, the class declaration we want to inherit from. The function returns a class declaration which we can then tailor. new_class is the new class declaration to be returned. The nested function new_class:create() is part of the class declaration returned and will create new instances of the sub class we are creating. This function creates a newinst table which uses our new class table to hold its methods. The new class table in turn looks in the baseClass if it cannot find a method we require, and thus we inherit its methods.</p>
+
+<p>Inheritance Example</p>
+
+<p>Building on SimpleClass we now create a class called SubClass that inherits from SimpleClass and overrides className():</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; -- Create a new class that inherits from SimpleClass
+&gt; SubClass = inheritsFrom( SimpleClass )
+&gt;
+&gt; -- override className() function
+&gt; function SubClass:className() print( "SubClass" ) end
+&gt;
+&gt; -- Create an instance of SimpleClass
+&gt; simple = SimpleClass:create()
+&gt; 
+&gt; simple:className()
+SimpleClass
+
+
+
+&gt; 
+&gt; simple:doSomething()
+Doing something
+&gt; 
+&gt; -- Create an instance of SubClass
+&gt; sub = SubClass:create()
+&gt; 
+&gt; sub:className()  -- Call overridden method
+SubClass
+&gt; 
+&gt; sub:doSomething()  -- Call base class method
+Doing something
+&gt; 
+</code></pre></div></div>
+
+<p>OO Properties</p>
+
+<p>We can now expand on our inheritance structure and add features that are common in other languages, like access to a class’s super class and a isa() method that provides type id functionality:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-- A new inheritsFrom() function
+--
+function inheritsFrom( baseClass )
+
+    local new_class = {}
+    local class_mt = { __index = new_class }
+
+    function new_class:create()
+        local newinst = {}
+        setmetatable( newinst, class_mt )
+        return newinst
+    end
+
+    if nil ~= baseClass then
+        setmetatable( new_class, { __index = baseClass } )
+    end
+
+    -- Implementation of additional OO properties starts here --
+
+    -- Return the class object of the instance
+    function new_class:class()
+        return new_class
+    end
+
+    -- Return the super class object of the instance
+    function new_class:superClass()
+        return baseClass
+    end
+
+    -- Return true if the caller is an instance of theClass
+    function new_class:isa( theClass )
+        local b_isa = false
+
+        local cur_class = new_class
+
+        while ( nil ~= cur_class ) and ( false == b_isa ) do
+            if cur_class == theClass then
+                b_isa = true
+            else
+                cur_class = cur_class:superClass()
+            end
+        end
+
+        return b_isa
+    end
+
+    return new_class
+end
+</code></pre></div></div>
+
+<p>And, an example of usage:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; SimpleClass = inheritsFrom( nil )  -- pass nil because SimpleClass has no super class
+&gt; 
+&gt; SubClass = inheritsFrom( SimpleClass )
+&gt; 
+&gt; FinalClass = inheritsFrom( SubClass )
+&gt; 
+&gt; sub = SubClass:create()
+&gt; fc = FinalClass:create()
+&gt; 
+&gt; print( fc:isa( SubClass ) )
+true
+&gt; print( fc:isa( FinalClass ) )
+true
+&gt; print( sub:isa( SubClass ) )
+true
+&gt; print( sub:isa( FinalClass ) )
+false
+</code></pre></div></div>
+
+<p>Alternative Approach: Prototype Based</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Prototype-based programming is a style of object-oriented programming in which classes are not present, and behavior reuse (known as inheritance in class-based languages) is performed via a process of cloning existing objects that serve as prototypes. This model can also be known as class-less, prototype-oriented or instance-based programming. 
+</code></pre></div></div>
+
+<p>[Wikipedia article on Prototype-based programming]</p>
+
+<p>Most of the code is basically the same as above, but reduced to only the essentials needed to make “Prototype based programming” work. More exactly it allows prototype programming using cloning and prototype delegation. Access to a property not set in an object is delegated to it’s prototype. This code uses the table table as the very basic prototype, and object as a specialization of table. The function object.isa is not strictly needed for the prototype paradigm, but more of a convenience.</p>
+
+<p>Function clone(base_object[, clone_object]) -&gt; table</p>
+
+<p>Parameters:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>base_object: table, the base object to be cloned.
+clone_object: table, an optional object to turn into a clone of base_object. 
+</code></pre></div></div>
+
+<p>Returns:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>table: the new clone. 
+</code></pre></div></div>
+
+<p>If new_object is not of type table new_object is returned if it’s not nil in which case base_object is returned. new_object has it’s metatable set to itself, and it’s __index now points to it’s prototype base_object. clone is also available as object.clone.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>It also has potential problems with boolean values being passed as either argument, because, uhm... as exercise for the reader!? ;-) 
+</code></pre></div></div>
+
+<p>Function isa( clone_object, base_object) -&gt; bool</p>
+
+<p>Parameters:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>clone_object: table, the clone to check
+base_object: table, the suspected base of clone_object. 
+</code></pre></div></div>
+
+<p>Returns:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bool: clone has base in the prototype hierarchy. 
+</code></pre></div></div>
+
+<p>If neither of the arguments is a table isa falls back to returning the comparison of the types. It’s also available as object.isa.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>This function will get bad performance on deep prototype hierarchies. 
+</code></pre></div></div>
+
+<p>The Code</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>function clone( base_object, clone_object )
+  if type( base_object ) ~= "table" then
+    return clone_object or base_object 
+  end
+  clone_object = clone_object or {}
+  clone_object.__index = base_object
+  return setmetatable(clone_object, clone_object)
+end
+
+function isa( clone_object, base_object )
+  local clone_object_type = type(clone_object)
+  local base_object_type = type(base_object)
+  if clone_object_type ~= "table" and base_object_type ~= table then
+    return clone_object_type == base_object_type
+  end
+  local index = clone_object.__index
+  local _isa = index == base_object
+  while not _isa and index ~= nil do
+    index = index.__index
+    _isa = index == base_object
+  end
+  return _isa
+end
+
+object = clone( table, { clone = clone, isa = isa } )
+</code></pre></div></div>
+
+<p>Examples</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-- testing "isa"
+foo = object:clone()
+bar = object:clone()
+baz = foo:clone()
+
+print( foo:isa(object) )
+print( bar:isa(foo) )
+print( baz:isa(foo) )
+
+--[[ output:
+true
+false
+true
+]]
+
+--testing prototype delegation
+
+foo = object:clone()
+bar = foo:clone()
+
+function foo:speak()
+  print(self.thoughts or "foo has no thoughts")
+end
+
+bar:speak()
+
+--[[ output:
+foo has no thoughts
+]]
+
+bar.thoughts = "I may be a clone, but I'm an individual!"
+bar:speak()
+
+--[[ output:
+I may be a clone, but I'm an individual!
+]]
+</code></pre></div></div>
+
+<p>Contributors: KevinBaca</p>
+
+<p>See Also</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ObjectOrientedProgramming 
+</code></pre></div></div>
+
+<p>RecentChanges · preferences
+edit · history
+Last edited November 18, 2011 11:09 am GMT (diff)</p>
+</div>
+            <div style="clear:both;">
+              <p class="text-center">
+                <br />
+                
+              </p>
+            </div>
+            <hr>
+            
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/lua_for_loop/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        <li class="next disabled">
+          <a>
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+      </ul>
+    <div class="clear"></div>
+    
+
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            Notes 2019 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/js/bootstrap.min.js "></script>
+<script src="/js/typeahead.bundle.min.js "></script>
+
+<script src="/js/main.js "></script>
+
+</body>
+
+</html>

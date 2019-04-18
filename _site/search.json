@@ -56,6 +56,168 @@
     },
   
 
+  
+    
+    
+    {
+      "title": "Lua Data Types",
+      "url": "/docs/lua_dataTypes/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Assignment",
+      "url": "/docs/lua_assignment/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Numbers",
+      "url": "/docs/lua_numbers/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Strings",
+      "url": "/docs/lua_strings/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Operators",
+      "url": "/docs/lua_operators/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Control Structures",
+      "url": "/docs/lua_controlstructure/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Tables",
+      "url": "/docs/lua_tables/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Functions",
+      "url": "/docs/lua_function/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Scope",
+      "url": "/docs/lua_scope/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Metamethods",
+      "url": "/docs/lua_metamethods/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Environments",
+      "url": "/docs/lua_environments/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Modules",
+      "url": "/docs/lua_modules/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Objects",
+      "url": "/docs/lua_objects/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Patterns",
+      "url": "/docs/lua_patterns/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Coroutines",
+      "url": "/docs/lua_coroutines/"
+
+    },
+  
+    
+    
+    {
+      "title": "lua iterators",
+      "url": "/docs/lua_iterators/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Garbage Collection",
+      "url": "/docs/lua_garbage_collection/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua Weak tables",
+      "url": "/docs/lua_weekTables/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua For Loop",
+      "url": "/docs/lua_for_loop/"
+
+    },
+  
+    
+    
+    {
+      "title": "Lua inheritance",
+      "url": "/docs/lua_inheritance/"
+
+    },
+  
+
 
   
   {

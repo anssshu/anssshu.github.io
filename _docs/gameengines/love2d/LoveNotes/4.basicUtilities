@@ -1,0 +1,44 @@
+A basic program architecture
+
+--create a folder 
+--create 2 files cald main.lua and conf.lua
+--and put it inside the folder
+
+--create another folder inside the same folder to put your resourses
+
+---write you game configuration inside the conf.lua fie
+--example conf.lua
+
+function love.conf(t)
+	t.title="lov"
+	t.window.icon="assets/icon.png"
+	t.window.width=600
+	t.window.height=500
+	t.console=true
+end
+
+------Next move on to your main.lua file
+-----write your game logic inside it
+
+//create a function to load resources
+function love.load()
+
+end
+
+--create a functon to update every frame 
+function love.update(dt)
+
+end
+
+--create a function to draw to screen
+function love.draw()
+
+end
+
+---you are doneoy
+
+open a terminal
+type love <path of your root folder>
+
+yuor game will start
+

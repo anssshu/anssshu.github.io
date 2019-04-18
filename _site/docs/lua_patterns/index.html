@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/favicon.ico?1">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Lua Patterns | Notes</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="Lua Patterns" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Patterns Tutorial lua-users home wiki" />
+<meta property="og:description" content="Patterns Tutorial lua-users home wiki" />
+<link rel="canonical" href="http://localhost:4000/docs/lua_patterns/" />
+<meta property="og:url" content="http://localhost:4000/docs/lua_patterns/" />
+<meta property="og:site_name" content="Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-18T11:43:34+02:00" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/lua_patterns/","headline":"Lua Patterns","dateModified":"2019-04-18T11:43:34+02:00","datePublished":"2019-04-18T11:43:34+02:00","description":"Patterns Tutorial lua-users home wiki","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="canonical" href="http://localhost:4000/docs/lua_patterns/">
+    <link rel="alternate" type="application/rss+xml" title="Notes" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="/">
+                <span><img src="/img/logonav.png" alt="Logo"></span> Notes
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ><a href="/blog/2017/02/01/welcome-to-jekyll/">Blog</a></li>
+                
+            </ul>
+            <div class="navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <input id="search-box" type="search" class="form-control" placeholder="Search...">
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href=""><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+            Notes
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-1" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/home/">Welcome to Notes</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/cheatsheet/">Markdown Cheatsheet</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+            Jekyll
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-2" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/intro/">Intro to Jekyll</a>
+          
+            
+            
+            <a class="list-group-item " href=""></a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+            Github
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-3" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/github_intro/">Github Notes</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+            Sketching
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/sketch/">Sketching Youtube tutorial collections</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+            Lua
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse" id="collapse-5" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_dataTypes/">Lua Data Types</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_assignment/">Lua Assignment</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_numbers/">Lua Numbers</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_strings/">Lua Strings</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_operators/">Lua Operators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_controlstructure/">Lua Control Structures</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_tables/">Lua Tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_function/">Lua Functions</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_scope/">Lua Scope</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_metamethods/">Lua Metamethods</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_environments/">Lua Environments</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_modules/">Lua Modules</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_objects/">Lua Objects</a>
+          
+            
+            
+            <a class="list-group-item active" href="/docs/lua_patterns/">Lua Patterns</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_coroutines/">Lua Coroutines</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_iterators/">lua iterators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_garbage_collection/">Lua Garbage Collection</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_weekTables/">Lua Weak tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_for_loop/">Lua For Loop</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_inheritance/">Lua inheritance</a>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+        </div>
+
+        <div class="col-md-8">
+            <h1>Lua Patterns</h1>
+            <div id="markdown-content-container"><p>Patterns Tutorial</p>
+
+<p>lua-users home
+	wiki</p>
+
+<p>Lua patterns can match sequences of characters, where each character can be optional, or repeat multiple times. If you’re used to other languages that have regular expressions to match text, remember that Lua’s pattern matching is not the same: it’s more limited, and has different syntax.</p>
+
+<p>After reading this tutorial, it’s very strongly recommended to read the manual on patterns[1], so you know everything it offers.</p>
+
+<p>Introduction to patterns</p>
+
+<p>First we will use the string.find function, which finds the first occurrence of a pattern in a string and returns start and end indices of the first and last characters that matched the text:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = string.find('banana', 'an') -- find 1st occurance of 'an' (letters are matched literally)
+2       3
+&gt; = string.find('banana', 'lua') -- 'lua' will not be found
+nil
+</code></pre></div></div>
+
+<p>But literally matching text isn’t that useful, so patterns have the concept of character classes. A character class is a pattern that matches one of a set of characters. For example, . is a character class that matches any character:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = string.find("abcdefg", 'b..')
+2 4
+</code></pre></div></div>
+
+<p>We can now use these indices to get the matched text, but there’s a better way: the string.match function. It returns the matched text, or nil if the pattern is not found: (actually, find also returns the matched text, but it first returns the indexes; match only returns the text)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = string.match("abcdefg", 'b..')
+bcd
+</code></pre></div></div>
+
+<p>Patterns have a few pre-defined classes, use them as “%x”, where “x” is the letter identifying the class:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = string.match("foo 123 bar", '%d%d%d') -- %d matches a digit
+123
+&gt; = string.match("text with an Uppercase letter", '%u') -- %u matches an uppercase letter
+U
+</code></pre></div></div>
+
+<p>Making the letter after the % uppercase inverts the class, so %D will match all non-digit characters. See the patterns manual (linked at the top of the tutorial) for a list of all pre-defined classes.</p>
+
+<p>You can also create your own classes by wrapping a group of characters in square brackets. This will match one of the characters. If the first character inside the brackets is ^, then it will match a character not in the group.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = string.match("abcd", '[bc][bc]')
+bc
+&gt; = string.match("abcd", '[^ad]')
+b
+&gt; = string.match("123", '[0-9]') -- you can specify a range of characters using -
+1
+</code></pre></div></div>
+
+<p>Repetition</p>
+
+<p>Even with character classes this is still very limiting, because we can only match strings with a fixed length. To solve this, patterns support these four repetition operators:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* Match the previous character (or class) zero or more times, as many times as possible.
++ Match the previous character (or class) one or more times, as many times as possible.
+- Match the previous character (or class) zero or more times, as few times as possible.
+? Make the previous character (or class) optional. 
+</code></pre></div></div>
+
+<p>We’ll start with ?, since it’s the simplest:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = string.match("examples", 'examples?')
+examples
+&gt; = string.match("example", 'examples?')
+example
+&gt; = string.match("example", 'examples')
+nil
+</code></pre></div></div>
+
+<p>Now an example of +. Note how it’s used with a class, so it can match a sequence of different characters:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = string.match("this is some text with a number 12345 in it", '%d+')
+12345
+</code></pre></div></div>
+
+<p>Unlike +, * can match nothing:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = string.match("one |two| three", '|.*|')
+|two|
+&gt; = string.match("one || three", '|.*|')
+||
+&gt; = string.match("one || three", '|.+|')
+nil
+</code></pre></div></div>
+
+<p>A common mistake with + and * is not realizing that they match as much as possible, which may not be the desired result. One way to fix this is using -:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = string.match("one |two| three |four| five", '|.*|')
+|two| three |four|
+&gt; = string.match("one |two| three |four| five", '|.-|')
+|two|
+&gt; = string.match("one |two| three |four| five", '|[^|]*|') -- another solution can be to not let the contents match the delimiter
+|two|
+</code></pre></div></div>
+
+<p>When using -, you need to remember to “anchor” it from both sides, otherwise it will match nothing (since it tries to match as little as possible):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = string.match("abc", 'a.*')
+abc
+&gt; = string.match("abc", 'a.-') -- the .- part matches nothing
+a
+&gt; = string.match("abc", 'a.-$') -- the $ matches the end of the string
+abc
+&gt; = string.match("abc", '^.-b') -- the ^ matches the start of the string
+ab
+</code></pre></div></div>
+
+<p>Here we also introduced ^ and $, which match the start and end of the string. They’re not just for use with -, you can just prepend the pattern with ^ to make it match at the start, append $ to make it match at the end, and wrap it in both (like the example above) to make it match the whole string.</p>
+
+<p>Finally, you might be thinking how to match all these special characters literally. The solution is to prepend them with a % character:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = string.match("%*^", '%%%*%^')
+%*^
+</code></pre></div></div>
+
+<p>Captures</p>
+
+<p>What if you want to get certain pieces out of a string of text? This can be done by wrapping parts of a pattern in ( ), and the contents of each of these captures will be returned from string.match.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = string.match("foo: 123 bar: 456", '(%a+):%s*(%d+)%s+(%a+):%s*(%d+)') -- %a: letter %s: whitespace
+foo 123 bar 456
+</code></pre></div></div>
+
+<p>Each capture is returned as a separate result, so this is useful for splitting out values</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    date = "04/19/64"
+    m, d, y = string.match(date, "(%d+)/(%d+)/(%d+)")
+    print("19" .. y)  --&gt; 1964
+</code></pre></div></div>
+
+<p>For more on captures, see the manual [2]</p>
+
+<p>Limitations of Lua patterns</p>
+
+<p>Especially if you’re used to other languages with regular expressions, you might expect to be able to do stuff like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'(foo)+' -- match the string "foo" repeated one or more times
+'(foo|bar)' -- match either the string "foo" or the string "bar"
+</code></pre></div></div>
+
+<p>Unfortunately Lua patterns do not support this, only single characters can be repeated or chosen between, not sub-patterns or strings. The solution is to either use multiple patterns and write some custom logic, use a regular expression library like lrexlib or Lua PCRE, or use LPeg [3]. LPeg is a powerful text parsing library for Lua based on Parsing Expression Grammar [4]. It offers functions to create and combine patterns in Lua code, and also a language somewhat like Lua patterns or regular expressions to conveniently create small parsers.</p>
+
+<p>See Also</p>
+
+<p>Again, now that you have an idea of how patterns work, see the patterns manual[1] to find out all the possibilities.
+RecentChanges · preferences
+edit · history
+Last edited June 13, 2014 6:50 pm GMT (diff)</p>
+</div>
+            <div style="clear:both;">
+              <p class="text-center">
+                <br />
+                
+              </p>
+            </div>
+            <hr>
+            
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/lua_objects/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/docs/lua_coroutines/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+      </ul>
+    <div class="clear"></div>
+    
+
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            Notes 2019 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/js/bootstrap.min.js "></script>
+<script src="/js/typeahead.bundle.min.js "></script>
+
+<script src="/js/main.js "></script>
+
+</body>
+
+</html>

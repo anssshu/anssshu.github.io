@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/favicon.ico?1">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Lua Data Types | Notes</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="Lua Data Types" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Lua Types Tutorial lua-users home wiki" />
+<meta property="og:description" content="Lua Types Tutorial lua-users home wiki" />
+<link rel="canonical" href="http://localhost:4000/docs/lua_dataTypes/" />
+<meta property="og:url" content="http://localhost:4000/docs/lua_dataTypes/" />
+<meta property="og:site_name" content="Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-18T11:43:34+02:00" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/lua_dataTypes/","headline":"Lua Data Types","dateModified":"2019-04-18T11:43:34+02:00","datePublished":"2019-04-18T11:43:34+02:00","description":"Lua Types Tutorial lua-users home wiki","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="canonical" href="http://localhost:4000/docs/lua_dataTypes/">
+    <link rel="alternate" type="application/rss+xml" title="Notes" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="/">
+                <span><img src="/img/logonav.png" alt="Logo"></span> Notes
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ><a href="/blog/2017/02/01/welcome-to-jekyll/">Blog</a></li>
+                
+            </ul>
+            <div class="navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <input id="search-box" type="search" class="form-control" placeholder="Search...">
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href=""><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+            Notes
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-1" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/home/">Welcome to Notes</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/cheatsheet/">Markdown Cheatsheet</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+            Jekyll
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-2" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/intro/">Intro to Jekyll</a>
+          
+            
+            
+            <a class="list-group-item " href=""></a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+            Github
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-3" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/github_intro/">Github Notes</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+            Sketching
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/sketch/">Sketching Youtube tutorial collections</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+            Lua
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse" id="collapse-5" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item active" href="/docs/lua_dataTypes/">Lua Data Types</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_assignment/">Lua Assignment</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_numbers/">Lua Numbers</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_strings/">Lua Strings</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_operators/">Lua Operators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_controlstructure/">Lua Control Structures</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_tables/">Lua Tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_function/">Lua Functions</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_scope/">Lua Scope</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_metamethods/">Lua Metamethods</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_environments/">Lua Environments</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_modules/">Lua Modules</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_objects/">Lua Objects</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_patterns/">Lua Patterns</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_coroutines/">Lua Coroutines</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_iterators/">lua iterators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_garbage_collection/">Lua Garbage Collection</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_weekTables/">Lua Weak tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_for_loop/">Lua For Loop</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_inheritance/">Lua inheritance</a>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+        </div>
+
+        <div class="col-md-8">
+            <h1>Lua Data Types</h1>
+            <div id="markdown-content-container"><p>Lua Types Tutorial</p>
+
+<p>lua-users home
+	wiki</p>
+
+<p>This is a short introduction to the eight basic types of values in Lua: number, string, boolean, table, function, nil, userdata, thread. Each section introduces a different type.</p>
+
+<p>Please look at TutorialExamples for notes about running the examples here. We’ll use the print() function to print out values or calculations on those values. The parentheses around the arguments are important and will cause an error if omitted.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>!
+&gt; print("hello") -- print the string hello.
+hello
+</code></pre></div></div>
+
+<p>Numbers</p>
+
+<p>The number type represents a floating point (fractional) number. There is no separate integer (non-fractional) type.</p>
+
+<p>Lua allows simple arithmetic on numbers using the usual operators to add, subtract, multiply and divide.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; print(2+2)
+4
+&gt; print(2-7)
+-5
+&gt; print(7*8)
+56
+&gt; print(7/8)
+0.875
+</code></pre></div></div>
+
+<p>Notice that the numbers are not rounded into integers. They are floating point, or real numbers. We can assign values to variables using the = operator.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; x = 7
+&gt; print(x)
+7
+</code></pre></div></div>
+
+<p>The = operator assigns the number 7 to the variable x. We use the print() function again to print out the value of x. We can now use the value in x for other calculations.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; x = x * 9
+&gt; print(x)
+63
+&gt; print(x*2) -- will not change the value of x
+126
+&gt; print(x)
+63
+</code></pre></div></div>
+
+<p>For more information on Lua’s number type you can look at the NumbersTutorial.</p>
+
+<p>Strings</p>
+
+<p>Lua also uses strings (i.e. text) types. To create strings, wrap text in “double quotes” or ‘single quotes’:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; print("hello")
+hello
+</code></pre></div></div>
+
+<p>We can assign strings to variables just like we can numbers:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; who = "Lua user"
+&gt; print(who)
+Lua user
+</code></pre></div></div>
+
+<p>We can concatenate (join together) strings together using the .. operator:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; print("hello ")
+hello 
+&gt; print("hello " .. who) -- the variable "who" was assigned above
+hello Lua user
+&gt; print(who)
+Lua user
+</code></pre></div></div>
+
+<p>Unlike some other languages, you cannot use the + operator to concatenate strings. i.e.:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; message = "hello " + who
+stdin:1: attempt to perform arithmetic on a string value
+stack traceback:
+        stdin:1: in main chunk
+        [C]: ?
+</code></pre></div></div>
+
+<p>For more information on Lua’s string type you can look at the StringsTutorial.</p>
+
+<p>Boolean</p>
+
+<p>Boolean values have either the value true or false. If a value is not true, it must be false and vice versa. The not operator can be placed before a boolean value to invert it. i.e. not true is equal to false.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; x = true
+&gt; print(x)
+true
+&gt; print(not x)
+false
+&gt; print(not false)
+true
+</code></pre></div></div>
+
+<p>Boolean values are used to represent the results of logic tests. The equals ==, and not equals ~= operators will return boolean values depending on the values supplied to them.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; print(1 == 0) -- test whether two numbers are equal
+false
+&gt; print(1 == 1)
+true
+&gt; print(1 ~= 0) -- test whether two numbers are not equal
+true
+&gt; print(true ~= false) -- is true not equal to false?
+true
+</code></pre></div></div>
+
+<p>Note that for assignment you use a single equals sign (=), but for comparison you use a double equals sign (==). These two operators have different meanings but look similar, it’s a common mistake to write one where you meant the other.</p>
+
+<p>For more information on Lua’s Boolean type you can look at the ExpressionsTutorial.</p>
+
+<p>Tables</p>
+
+<p>Lua has a general-purpose aggregate datatype called a table. Aggregate data types are used for storing collections (such as lists, sets, arrays, and associative arrays) containing other objects (including numbers, strings, or even other aggregates). Lua is a unique language in that tables (which are associative arrays) are used for representing all other aggregate types.</p>
+
+<p>Tables are created using a pair of curly brackets {} . Let’s create an empty table:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; x = {}
+&gt; print(x)
+table: 0035C910
+</code></pre></div></div>
+
+<p>(it is normal if your table does not have the same unique identifier as in the above example.)</p>
+
+<p>The TablesTutorial will later explain how to use tables.</p>
+
+<p>Functions</p>
+
+<p>In Lua, functions are assigned to variables, just like numbers and strings. Functions are created using the function keyword. Here we create a simple function which will print a friendly message.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; foo = function () print("hello") end -- declare the function
+&gt; foo() -- call the function
+hello
+&gt; print(foo) -- get the value of the variable "foo"
+function: 0035D6E8
+</code></pre></div></div>
+
+<p>Notice we can print the value of the variable foo and it displays (like tables) that the value is a function, and has unique identifier for that particular function. So, being a value just like any other, we should be able to assign functions to variables, just like the other values, and we can.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; x = function() print("hello") end
+&gt; x()
+hello
+&gt; print(x)
+function: 0035EA20
+</code></pre></div></div>
+
+<p>The ability to do this is because Lua has first class values. This means that all values are treated the same way. This is a very powerful and useful feature of Lua.</p>
+
+<p>A function can be part of a table:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; a = "aeiou" -- a string
+&gt; b = 13      -- a number
+&gt; c = function()  -- a function
+&gt;  print ("\n\n\tAin't it grand")
+&gt; end
+&gt; d = { a, b ,c} -- put them in a table
+&gt; function printit(tata)  -- print their types.
+&gt; table.unpack(tata) -- unpack the table
+&gt; for key, value in ipairs(tata) do print(key, type(value)) end
+&gt; end
+&gt; printit(d)
+1       string
+2       number
+3       function
+</code></pre></div></div>
+
+<p>The FunctionsTutorial will later explain how to use functions.</p>
+
+<p>nil values</p>
+
+<p>nil is a special value which indicates the lack of a useful value. If you try getting a variable that doesn’t exist you will get nil:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; print(x)
+nil
+&gt; x = 2.5
+&gt; print(x)
+2.5
+</code></pre></div></div>
+
+<p>The other places where nil is used will be shown in other tutorials.</p>
+
+<p>Userdata</p>
+
+<p>Userdata values are objects foreign to Lua, such as objects implemented in C. These typically come about when an object in a C library is exposed to Lua. You cannot do anything with a userdata value in Lua other than pass it around, it’s only useful for giving to functions exposed by the same C library that made the userdata. But using metamethods (explained in a later tutorial), it’s possible to make userdata work with operators and act similar to tables. Userdata is a more advanced topic discussed further in the [Lua Reference Manual].</p>
+
+<p>Thread</p>
+
+<p>A thread value represents an independent (cooperative) thread of execution. These are discussed further in CoroutinesTutorial.</p>
+
+<p>Dynamic typing</p>
+
+<p>You might have noticed that whilst we created the above variables, we did not have to specify which type of variable we were creating. For example,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 1
+b = "hello"
+c = {}
+</code></pre></div></div>
+
+<p>In other languages, such as C, we have to specify the type of a variable when we create it. In Lua we can also assign different types of values to the same variable, e.g.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = 1
+a = "hello"
+a = {}
+</code></pre></div></div>
+
+<p>This is called dynamic typing. This means that you don’t have to specify what type a variable is. The variable knows what type it is from the value, or object, assigned to it.</p>
+
+<p>Querying type</p>
+
+<p>As Lua is a reflective language, we can use the Lua function type() to get a description of the type of a particular object.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; x = "123"  -- a string
+&gt; print(x, type(x)) -- show the value of x and its type
+123     string
+&gt; x = x + 7  -- add a number to the string which forces coercion
+&gt; print(x, type(x)) -- again show the value and type
+130     number
+</code></pre></div></div>
+
+<p>RecentChanges · preferences
+edit · history
+Last edited December 22, 2013 11:16 pm GMT (diff)</p>
+</div>
+            <div style="clear:both;">
+              <p class="text-center">
+                <br />
+                
+              </p>
+            </div>
+            <hr>
+            
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/sketch/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/docs/lua_assignment/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+      </ul>
+    <div class="clear"></div>
+    
+
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            Notes 2019 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/js/bootstrap.min.js "></script>
+<script src="/js/typeahead.bundle.min.js "></script>
+
+<script src="/js/main.js "></script>
+
+</body>
+
+</html>

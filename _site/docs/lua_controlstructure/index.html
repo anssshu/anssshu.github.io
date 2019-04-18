@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <link rel="shortcut icon" href="/favicon.ico?1">
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Lua Control Structures | Notes</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="Lua Control Structures" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Control Structure Tutorial lua-users home wiki" />
+<meta property="og:description" content="Control Structure Tutorial lua-users home wiki" />
+<link rel="canonical" href="http://localhost:4000/docs/lua_controlstructure/" />
+<meta property="og:url" content="http://localhost:4000/docs/lua_controlstructure/" />
+<meta property="og:site_name" content="Notes" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-18T11:43:34+02:00" />
+<script type="application/ld+json">
+{"@type":"WebPage","url":"http://localhost:4000/docs/lua_controlstructure/","headline":"Lua Control Structures","dateModified":"2019-04-18T11:43:34+02:00","datePublished":"2019-04-18T11:43:34+02:00","description":"Control Structure Tutorial lua-users home wiki","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link rel="canonical" href="http://localhost:4000/docs/lua_controlstructure/">
+    <link rel="alternate" type="application/rss+xml" title="Notes" href="http://localhost:4000/feed.xml" />
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+            <a class="navbar-brand" href="/">
+                <span><img src="/img/logonav.png" alt="Logo"></span> Notes
+            </a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ><a href="/blog/2017/02/01/welcome-to-jekyll/">Blog</a></li>
+                
+            </ul>
+            <div class="navbar-right">
+                <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                        <input id="search-box" type="search" class="form-control" placeholder="Search...">
+                        <i class="fa fa-search form-control-feedback"></i>
+                    </div>
+                </form>
+                <ul class="nav navbar-nav">
+                    <li><a href=""><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+    <div class="page-content">
+        <div class="wrapper">
+            <div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1">
+            Notes
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-1" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/home/">Welcome to Notes</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/cheatsheet/">Markdown Cheatsheet</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+            Jekyll
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-2" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/intro/">Intro to Jekyll</a>
+          
+            
+            
+            <a class="list-group-item " href=""></a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+            Github
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-3" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/github_intro/">Github Notes</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+            Sketching
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse collapse" id="collapse-4" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/sketch/">Sketching Youtube tutorial collections</a>
+          
+        </div>
+      </div>
+    </div>
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false" aria-controls="collapse-5">
+            Lua
+          </a>
+        </h4>
+      </div>
+      
+      
+      <div class="panel-collapse" id="collapse-5" role="tabpanel" aria-label="Side Navigation">
+        <div class="list-group">
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_dataTypes/">Lua Data Types</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_assignment/">Lua Assignment</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_numbers/">Lua Numbers</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_strings/">Lua Strings</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_operators/">Lua Operators</a>
+          
+            
+            
+            <a class="list-group-item active" href="/docs/lua_controlstructure/">Lua Control Structures</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_tables/">Lua Tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_function/">Lua Functions</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_scope/">Lua Scope</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_metamethods/">Lua Metamethods</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_environments/">Lua Environments</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_modules/">Lua Modules</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_objects/">Lua Objects</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_patterns/">Lua Patterns</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_coroutines/">Lua Coroutines</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_iterators/">lua iterators</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_garbage_collection/">Lua Garbage Collection</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_weekTables/">Lua Weak tables</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_for_loop/">Lua For Loop</a>
+          
+            
+            
+            <a class="list-group-item " href="/docs/lua_inheritance/">Lua inheritance</a>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+        </div>
+
+        <div class="col-md-8">
+            <h1>Lua Control Structures</h1>
+            <div id="markdown-content-container"><p>Control Structure Tutorial</p>
+
+<p>lua-users home
+	wiki</p>
+
+<p>Control structures let your program make choices, or to run the same piece of code many times.</p>
+
+<p>if statement</p>
+
+<p>The if statement lets you run different code based on a condition:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if condition then
+  block
+elseif condition2 then
+  block
+elseif condition3 then
+  block
+else
+  block
+end
+</code></pre></div></div>
+
+<p>The if and elseif parts are checked in order, and once one of the conditions is true, it runs the block under it and skips to the end, ignoring any other elseif conditions after it. The else block is run if none of the conditions match. Finally, the elseif and else parts are optional.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; n = 5
+&gt; if n &gt; 5 then print("greater than 5") else print("less than 5") end
+less than 5
+&gt; n = 7
+&gt; if n &gt; 5 then print("greater than 5") else print("less than 5") end
+greater than 5
+</code></pre></div></div>
+
+<p>A more complex example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; n = 12
+&gt; if n &gt; 15 then
+&gt;&gt; print("the number is &gt; 15")
+&gt;&gt; elseif n &gt; 10 then
+&gt;&gt; print("the number is &gt; 10")
+&gt;&gt; elseif n &gt; 5 then
+&gt;&gt; print("the number is &gt; 5")
+&gt;&gt; else
+&gt;&gt; print("the number is &lt;= 5")
+&gt;&gt; end
+the number is &gt; 10
+</code></pre></div></div>
+
+<p>Notice how just one of the messages is printed, even though more than one of the conditions are true: This is because once one matches, the if statement skips checking the other conditions.</p>
+
+<p>while loop</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>while condition do
+  block
+end
+</code></pre></div></div>
+
+<p>This runs the block over and over in a loop, but on each iteration, it first checks the condition, and if it’s false, skips to the end, breaking the loop. If the condition is always false, the block will never be run.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; i = 1
+&gt; while i &lt;= 10 do
+&gt;&gt; print(i)
+&gt;&gt; i = i + 1
+&gt;&gt; end
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</code></pre></div></div>
+
+<p>repeat loop</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>repeat
+  block
+until condition
+</code></pre></div></div>
+
+<p>Same as the while loop, except the condition is inverted (breaks the loop when true), and it’s checked after the first iteration, so the code is guaranteed to run at least once.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; i = 5
+&gt; repeat
+&gt;&gt; print(i)
+&gt;&gt; i = i - 1
+&gt;&gt; until i == 0
+5
+4
+3
+2
+1
+</code></pre></div></div>
+
+<p>numeric for loop</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for variable = start, stop, step do
+  block
+end
+</code></pre></div></div>
+
+<p>Runs the block with variable first being equal to start, then keeps incrementing it step amount and running the block again until it’s greater than stop. step can be omitted and will default to 1.</p>
+
+<p>You can also make the step negative, and the loop will stop once the counter variable is less than the stop value.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; for i = 1, 5 do
+&gt;&gt; print(i)
+&gt;&gt; end
+1
+2
+3
+4
+5
+&gt; for i = 1, 100, 8 do
+&gt;&gt; print(i)
+&gt;&gt; end
+1
+9
+17
+25
+33
+41
+49
+57
+65
+73
+81
+89
+97
+&gt; for i = 3, -3, -1 do
+&gt;&gt; print(i)
+&gt;&gt; end
+3
+2
+1
+0
+-1
+-2
+-3
+&gt; for i = 0, 1, 0.25 do
+&gt;&gt; print(i)
+&gt;&gt; end
+0
+0.25
+0.5
+0.75
+1
+&gt; for i = 1, 3 do
+&gt;&gt; for j = 1, i do
+&gt;&gt; print(j)
+&gt;&gt; end
+&gt;&gt; end
+1
+1
+2
+1
+2
+3
+</code></pre></div></div>
+
+<p>Also remember that the variable in a for loop is only visible inside the block, it will not still be there containing the last value after the loop is broken.</p>
+
+<p>iterator for loop</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for var1, var2, var3 in iterator do
+  block
+end
+</code></pre></div></div>
+
+<p>The iterator version of the for loop takes a special iterator function, and can have any amount of variables. What the loop does, how many variables it needs, and what they will be set to depends on the iterator.</p>
+
+<p>This is mainly good for tables, which haven’t been introduced yet, but here’s an example to give you an idea:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; tbl = {"a", "b", "c"}
+&gt; for key, value in ipairs(tbl) do
+&gt;&gt; print(key, value)
+&gt;&gt; end
+1       a
+2       b
+3       c
+</code></pre></div></div>
+
+<p>Here, ipairs is the iterator, which gets the numbered entries from a table in order.</p>
+
+<p>break statement</p>
+
+<p>The break statement causes Lua to jump out of the current loop:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; i = 3
+&gt; while true do -- infinite loop
+&gt;&gt; print(i)
+&gt;&gt; i = i + 1
+&gt;&gt; if i &gt; 6 then
+&gt;&gt; break
+&gt;&gt; end
+&gt;&gt; end
+3
+4
+5
+6
+</code></pre></div></div>
+
+<p>With nested loops, break only affects the innermost one:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; for i = 1, 2 do
+&gt;&gt; while true do
+&gt;&gt; break
+&gt;&gt; end
+&gt;&gt; print(i)
+&gt;&gt; end
+1
+2
+</code></pre></div></div>
+
+<p>Using break outside of a loop is a syntax error:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; break
+stdin:1: &lt;break&gt; at line 1 not inside a loop
+</code></pre></div></div>
+
+<p>continue statement alternatives</p>
+
+<p>Many other languages have a continue statement that skips the rest of the current iteration of the innermost loop. In Lua 5.2, this can be imitated using goto:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; for i = 1, 10 do
+&gt;&gt; if i&gt;3 and i&lt;6 then goto continue end
+&gt;&gt; print(i)
+&gt;&gt; ::continue:: -- a name surrounded in :: :: is a goto label
+&gt;&gt; end
+1
+2
+3
+6
+7
+8
+9
+10
+</code></pre></div></div>
+
+<p>Lua 5.1 and earlier doesn’t have goto, but there are other workarounds:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; for i = 1, 10 do
+&gt;&gt; if not (i&gt;3 and i&lt;6) then
+&gt;&gt; print(i)
+&gt;&gt; end
+&gt;&gt; end
+1
+2
+3
+6
+7
+8
+9
+10
+&gt; for i = 1, 10 do repeat
+&gt;&gt; if i&gt;3 and i&lt;6 then break end
+&gt;&gt; print(i)
+&gt;&gt; until true end
+1
+2
+3
+6
+7
+8
+9
+10
+</code></pre></div></div>
+
+<p>Conditions</p>
+
+<p>Conditions don’t necessarily have to be boolean values. In fact, any value is a valid condition: nil and false make the condition false, anything else (including 0) makes it true.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; if 5 then print("true") else print("false") end
+true
+&gt; if 0 then print("true") else print("false") end
+true
+&gt; if true then print("true") else print("false") end
+true
+&gt; if {} then print("true") else print("false") end
+true
+&gt; if "string" then print("true") else print("false") end
+true
+&gt; if nil then print("true") else print("false") end
+false
+&gt; if false then print("true") else print("false") end
+false
+</code></pre></div></div>
+
+<p>Also there are some languages where variable assignment is considered an expression (so it can be used as a sub-expression), so code like this is written:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; i = 0
+&gt; while (i = i + 1) &lt;= 10 do print(i) end
+stdin:1: ')' expected near '='
+</code></pre></div></div>
+
+<p>But in Lua assignment is a statement, and the above example is a syntax error.</p>
+
+<p>if/else as an expression</p>
+
+<p>Some languages have a ternary operator that acts like an if/else statement, but can be used as a sub-expression. If the condition is true, it evaluates to one expression, otherwise it evaluates the other.</p>
+
+<p>Lua doesn’t have such an operator, but in many cases you can imitate it using the and and or logical operators. This works for two reasons: those operators don’t even run the right-side expression if the logical result is known only from the left side result, and also they directly return the result of their sub-expressions, instead of converting them to boolean:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; = true and print("test")
+test
+nil
+&gt; = false and print("test") -- 'and' is always false if one of the sides are false, don't bother running the other expression
+false
+&gt; = true or print("test") -- 'or' is always true if one of the sides are true, don't bother running the other expression
+true
+&gt; = false or print("test")
+test
+nil
+&gt; = 8 or 5
+8
+&gt; = true and "text"
+text
+</code></pre></div></div>
+
+<p>This can be used to make a simple if/else expression:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; condition = true
+&gt; = condition and 2 or 4
+2
+&gt; condition = false
+&gt; = condition and 2 or 4
+4
+&gt; = condition and print("a") or print("b") -- only the "false" branch is run, otherwise both a and b would be printed
+b
+nil
+</code></pre></div></div>
+
+<p>Remember that “and” has a higher precedence than “or”: If the condition is false, it makes the “and” expression give up and return false. This then makes the “or” part try its right-side expression and return its value. If the condition is true, “and” will return its right-side expression. This is then given to “or”, which sees that the left result is a true condition, and just returns it.</p>
+
+<p>Note that we assumed that the result of the true branch is a value that acts as a true condition. This leads to the catch: the true branch cannot evaluate to nil or false, because then the false branch will also be run and its value will be returned:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; condition = true
+&gt; = condition and false or true -- wrong result!
+true
+</code></pre></div></div>
+
+<p>This is because the whole “and” sub-expression is now false, causing “or” to try running its other sub-expression. But it is alright to return a false value from the false branch. In fact, if you’re in a situation like the above example, you can just invert the condition and swap the contents of the branches:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&gt; condition = true
+&gt; = not condition and true or false
+false
+</code></pre></div></div>
+
+<p>But if both branches must return a value that acts as a false condition, there’s no way to work around that.
+RecentChanges · preferences
+edit · history
+Last edited September 17, 2013 5:59 pm GMT (diff)</p>
+</div>
+            <div style="clear:both;">
+              <p class="text-center">
+                <br />
+                
+              </p>
+            </div>
+            <hr>
+            
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <ul class="pager">
+      
+        
+        
+        <li class="previous">
+          <a href="/docs/lua_operators/">
+            <span aria-hidden="true">&larr;</span> Previous
+          </a>
+        </li>
+      
+
+      
+        
+        
+        <li class="next">
+          <a href="/docs/lua_tables/">
+            Next <span aria-hidden="true">&rarr;</span>
+          </a>
+        </li>
+      
+      </ul>
+    <div class="clear"></div>
+    
+
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <footer class="footer">
+    <div class="container">
+
+        <p class="text-center">
+            Notes 2019 |
+            Powered by <a href="https://github.com/aksakalli/jekyll-doc-theme">Jekyll Doc Theme</a>
+        </p>
+        <!-- <p class="text-muted">Place sticky footer content here.</p> -->
+    </div>
+</footer>
+
+    <script>
+  var baseurl = ''
+</script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="/js/bootstrap.min.js "></script>
+<script src="/js/typeahead.bundle.min.js "></script>
+
+<script src="/js/main.js "></script>
+
+</body>
+
+</html>
