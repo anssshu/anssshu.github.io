@@ -14,7 +14,7 @@ set the origin of the repository
 add files and folder into the project commit them and upload it to the server
 #### Easiest way 
 ```
-curl -h "anssshu" https://api.github.com/user/repos -d '{"name":"foo"}'
+curl -u "anssshu" https://api.github.com/user/repos -d '{"name":"foo"}'
 git clone https:github.com/anssshu/foo.git
 cd foo
 touch README.md 
@@ -34,7 +34,7 @@ git push origin master
 
 #### Create a github repo from the commandline
 
-`curl -h "anssshu" https://api.github.com/user/repos -d '{"name":"foo"}'`
+`curl -u  "anssshu" https://api.github.com/user/repos -d '{"name":"foo"}'`
 
 #### set the origin of the github project
 
